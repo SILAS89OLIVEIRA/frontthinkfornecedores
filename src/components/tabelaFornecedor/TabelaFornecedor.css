@@ -1,0 +1,321 @@
+/* ---------------------------------------------------
+    TABELA
+----------------------------------------------------- */
+
+.table-responsive {
+    padding: 0.5% 1% 1% 1%;
+}
+
+@media only screen and (min-width: 768px) {
+    .table-responsive {
+        padding: 0.5% 1% 1% 0.5%;
+    }
+}
+
+div .tabela {
+    width: 100%;
+    padding: 2% 1.5% 0% 1.5%;
+}
+
+
+@media only screen and (min-width: 768px) {
+    div .tabela {
+        width: 50%;
+        position: fixed; 
+        /*VERIFICAR POSITION*/
+        padding: 0.2% 0.5% 0% 0.5%;
+        left: 50%;
+        white-space: nowrap;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1490px) {
+    div .tabela {
+        width: 70%;
+        position: fixed;
+            /*VERIFICAR POSITION*/
+        padding: 0% 0% 0% 0.5%;
+        left: 30%;
+        white-space: nowrap;
+        display: block;
+    }
+}
+
+.cabecalho {
+    background-color: #007bff;
+    color: white;
+    border-spacing: 2px;
+    border-collapse: collapse;   
+    white-space: nowrap;
+}
+
+.cabecalho thead th {
+    text-align: center;
+}
+
+.cabecalho2 {
+    border-collapse: collapse;   
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* ---------------------------------------------------
+    CARD
+----------------------------------------------------- */
+
+
+.blocotabela {
+    padding-top: 5%;
+    float: left;
+    width: 96%;
+    margin-left: 2%;
+    height: 100%;
+    margin-bottom: 2%;
+}
+
+@media only screen and (min-width: 768px) {
+     .blocotabela {
+        float: left;
+        width: 50%;
+        height: 0px;
+        margin-left: 0%;
+        margin-right: 0%;
+        left: -0.5%;
+        padding: 0.4% 0% 0% 0.5%;
+        border-radius: 0%;
+    }
+}
+
+.blocotabela .cardFornecedor {
+    width: 100%;
+    border-radius: 0%;
+    border: none;
+    position: relative;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
+}
+
+@media only screen and (min-width: 768px) {
+    .blocotabela .cardFornecedor {
+        border-radius: 0%;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
+        position: static;
+        display: fixed;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1490px) {
+    .blocotabela .cardFornecedor {
+        border-radius: 0%;
+        border: none;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
+        position: static;
+        display: fixed;
+        width: 60%;
+    }
+}
+
+
+.card-title {
+    font-size: 18px;
+    padding: 2% 4%;
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------
+    INPUTS
+----------------------------------------------------- */
+div .calendario .data{
+    margin: 0%;
+
+}
+
+div .nomeData1 {
+    padding: 0% 0% 0% 0%;
+    display: inline;
+    position: relative;
+    left: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    div .nomeData1 {
+        padding: 0% 0% 0% 0%;
+        display: inline;
+        position: relative;
+        left: 100%;
+    }
+}
+
+div .nomeData2 {
+    padding: 0% 0% 0% 0%;
+    display: inline;
+    position: relative;
+    left: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    div .nomeData2 {
+        padding: 0% 0% 0% 0%;
+        display: inline;
+        position: relative;
+        left: 100%;
+    }
+}
+
+
+div .data {
+    width: 0%;
+    padding: 0% 0% 5% 1.2%; 
+    position: relative;    
+    display: flex;
+    left: 22%;
+}
+
+
+@media only screen and (min-width: 768px) {
+    div .data {
+        padding: 0% 0% 0% 15%; 
+        position: relative;
+        display: flex;
+        left: 0%;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    div .data {
+        padding: 0% 0% 0% 20%; 
+        position: relative;
+        display: flex;
+        left: 0%;
+    }
+}
+
+
+div .data1 {
+    padding: 0% 0% 0% 0%;
+    position: relative;
+    display: flex;
+    left: 22%;
+}
+
+
+@media only screen and (min-width: 768px) {
+    div .data1 {
+        width: 0%;
+        padding: 0% 0% 0% 75%;
+        position: relative;
+        display: flex;
+        left: 50%;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    div .data1 {
+        width: 0%;
+        padding: 0% 0% 0% 90%;
+        position: relative;
+        display: flex;
+        left: 50%;
+    }
+}
+
+
+div .react-date-picker__wrapper {
+    border-style: hidden hidden solid hidden;
+    position: relative;
+
+}
+
+.react-date-picker__inputGroup {
+    left: 17%;
+    position: relative;
+}
+
+.react-date-picker__clear-button {
+    left: 7%;
+    position: relative;
+}
+
+/* ---------------------------------------------------
+    BUTTON
+----------------------------------------------------- */
+
+div .buttoncard {
+    width: 45%;
+    padding: 10% 4% 4% 4%; 
+    position: relative;
+    float: left;
+    white-space: nowrap;
+}
+
+div .buttonCard1 {
+    width: 45%;
+    padding: 10% 4% 4% 4%;
+    position: relative;
+    float: right;
+    white-space: nowrap;
+}
+
+.buttoncard .buttonLimpar {
+    width: 100%;
+    padding-top: 1%;
+    background: #007bff;
+    border-radius: 0%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    border: none;
+}
+
+.buttoncard .buttonLimpar:hover {
+    background: white;
+    color: #007bff;
+}
+
+.buttoncard .buttonLimpar:focus {
+    background: white;
+    color: #007bff;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .buttoncard .buttonLimpar {
+        width: 100%;
+        padding-top: 1%;
+        background: #007bff;
+        border-radius: 0%;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+        border: none;        
+    }
+}
+
+.buttonCard1 .buttonFiltrar {
+    width: 100%;
+    padding-top: 1%;
+    background: #007bff;
+    border-radius: 0%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
+    border: none;
+}
+
+.buttonCard1 .buttonFiltrar:hover {
+    background: white;
+    color: #007bff;
+}
+
+
+.buttonCard1 .buttonFiltrar:focus {
+    background: white;
+    color: #007bff;
+}
+
+@media only screen and (min-width: 768px) {
+    .buttonCard1 .buttonFiltrar {
+        width: 100%;
+        padding-top: 1%;
+        background: #007bff;
+        border-radius: 0%;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+        border: none;	
+    }
+}
