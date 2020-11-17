@@ -3,44 +3,48 @@
 ----------------------------------------------------- */
 
 .table-responsive {
-    padding: 0.5% 1% 1% 1%;
+    padding: -0.5% 0% 1% 0%;
+    height: 50vh;
+    overflow: scroll;
 }
 
 @media only screen and (min-width: 768px) {
     .table-responsive {
-        padding: 0.5% 1% 1% 0.5%;
+        padding: 0% 1% 0% 0%;    
+        height: 53vh;
+        overflow: scroll;
     }
 }
+
+
 
 div .tabela {
     width: 100%;
-    padding: 2% 1.5% 0% 1.5%;
+    margin-top: 0%;
+    padding: 0% 0% 0% 0%;   
 }
 
+table thead .cabecalho {
+    position: fixed;
+    white-space: nowrap;
+    display: block;
+}
+
+table tbody .cabecalho2{
+    overflow: auto;
+}
 
 @media only screen and (min-width: 768px) {
     div .tabela {
-        width: 50%;
-        position: fixed; 
+        width: 100%;
         /*VERIFICAR POSITION*/
-        padding: 0.2% 0.5% 0% 0.5%;
-        left: 50%;
-        white-space: nowrap;
-        display: block;
+        padding: 0% 0% 0% 0%;
+        margin: 0%;
+        position: relative;
     }
 }
 
-@media only screen and (min-width: 1490px) {
-    div .tabela {
-        width: 70%;
-        position: fixed;
-            /*VERIFICAR POSITION*/
-        padding: 0% 0% 0% 0.5%;
-        left: 30%;
-        white-space: nowrap;
-        display: block;
-    }
-}
+
 
 .cabecalho {
     background-color: #007bff;
@@ -65,232 +69,362 @@ div .tabela {
 ----------------------------------------------------- */
 
 
-.blocotabela {
-    padding-top: 5%;
-    float: left;
-    width: 96%;
-    margin-left: 2%;
-    height: 100%;
-    margin-bottom: 2%;
+div .blocotabela {
+    margin: 0% 0% 10% 0%;
+    width: 101%;
 }
 
 @media only screen and (min-width: 768px) {
-     .blocotabela {
-        float: left;
-        width: 50%;
-        height: 0px;
-        margin-left: 0%;
-        margin-right: 0%;
-        left: -0.5%;
-        padding: 0.4% 0% 0% 0.5%;
-        border-radius: 0%;
+    div .blocotabela {
+        margin: 0% 0% 0% 0%;
+        padding: 0% 0% 0% 3%;
+        position: relative;
     }
 }
 
+
+
 .blocotabela .cardFornecedor {
     width: 100%;
+    height:  65vh;
     border-radius: 0%;
     border: none;
     position: relative;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
 }
 
+
 @media only screen and (min-width: 768px) {
     .blocotabela .cardFornecedor {
         border-radius: 0%;
         border: none;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
-        position: static;
-        display: fixed;
         width: 100%;
+        height: 55vh;
     }
 }
 
-@media only screen and (min-width: 1490px) {
+@media only screen and (min-width: 1680px) {
     .blocotabela .cardFornecedor {
         border-radius: 0%;
         border: none;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
-        position: static;
-        display: fixed;
-        width: 60%;
+        width: 100%;
+        height: 40vh;
     }
 }
 
 
-.card-title {
+form {
+    margin-left: 0%;
+}
+
+@media only screen and (min-width: 768px) {
+    form {
+        margin-left: 0%;
+        
+    }
+
+
+}
+
+
+.title-card {
     font-size: 18px;
-    padding: 2% 4%;
+    padding: 8% 4% 6% 5%;
     font-weight: bold;
+
+}
+
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    height: 0vh;
+}
+
+@media only screen and (min-width: 768px) {
+    div .row {
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+}
+
+div .row {
+    margin-right: 0%;
+    margin-left: -1%;
 }
 
 /* ---------------------------------------------------
     INPUTS
 ----------------------------------------------------- */
-div .calendario .data{
+
+div .col-sm-2  {
     margin: 0%;
-
-}
-
-div .nomeData1 {
-    padding: 0% 0% 0% 0%;
-    display: inline;
-    position: relative;
-    left: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-    div .nomeData1 {
-        padding: 0% 0% 0% 0%;
-        display: inline;
-        position: relative;
-        left: 100%;
-    }
-}
-
-div .nomeData2 {
-    padding: 0% 0% 0% 0%;
-    display: inline;
-    position: relative;
-    left: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-    div .nomeData2 {
-        padding: 0% 0% 0% 0%;
-        display: inline;
-        position: relative;
-        left: 100%;
-    }
+    width: 45%;
 }
 
 
-div .data {
-    width: 0%;
-    padding: 0% 0% 5% 1.2%; 
+div  .data {
+    padding: 0% 0% 0% 0%; 
     position: relative;    
-    display: flex;
-    left: 22%;
+    right: 7%;
 }
 
+div .col-sm-2 .nomeData1 {
+    margin-left: -6%;
+}
 
 @media only screen and (min-width: 768px) {
-    div .data {
-        padding: 0% 0% 0% 15%; 
+    div .col-sm-2 .data {
+        padding: 0% 2% 0% 0%; 
         position: relative;
         display: flex;
-        left: 0%;
+        width: 175%;
     }
-}
 
-@media only screen and (min-width: 1250px) {
-    div .data {
-        padding: 0% 0% 0% 20%; 
-        position: relative;
-        display: flex;
-        left: 0%;
+    div .col-sm-2 .nomeData1 {
+        margin-left: -3%;
     }
 }
 
 
-div .data1 {
+
+div .col-sm-2 .data1 {
     padding: 0% 0% 0% 0%;
     position: relative;
     display: flex;
-    left: 22%;
+    width: 100%;
 }
 
 
 @media only screen and (min-width: 768px) {
-    div .data1 {
+    div .col-sm-2 .data1 {
         width: 0%;
-        padding: 0% 0% 0% 75%;
+        padding: 0% 0% 0% 0%;
+        margin: 0% 0% 0%;
         position: relative;
         display: flex;
-        left: 50%;
+        width: 172%;
     }
 }
 
-@media only screen and (min-width: 1250px) {
-    div .data1 {
-        width: 0%;
-        padding: 0% 0% 0% 90%;
-        position: relative;
-        display: flex;
-        left: 50%;
-    }
-}
 
 
 div .react-date-picker__wrapper {
     border-style: hidden hidden solid hidden;
-    position: relative;
 
 }
 
 .react-date-picker__inputGroup {
-    left: 17%;
     position: relative;
+    left: 10%;
 }
 
 .react-date-picker__clear-button {
-    left: 7%;
     position: relative;
+
 }
 
+div .codFab {
+    border-radius: 0%;
+    border-style: hidden hidden solid hidden;
+    margin-left: 5%;
+    margin-bottom: 1rem;
+    padding-right: 0%;
+    width: 112%;
+    border-color: black;
+}
+
+div .labelform{
+    width: 55%;
+    
+}
+
+div .numProd {
+    border-radius: 0%;
+    border-style: hidden hidden solid hidden;
+    margin-left: 5%;
+    margin-bottom: 1rem;
+    padding-right: 0%;
+    width: 111%;
+    border-color: black;
+    position: relative;
+    left: 6%;
+}
+
+div .refFor {
+    border-radius: 0%;
+    border-style: hidden hidden solid hidden;
+    margin-left: 5%;
+    margin-bottom: 1rem;
+    padding-right: 0%;
+    width: 112%;
+    border-color: black;
+    margin-top: 0%;
+}
+
+div .numLoj {
+    border-radius: 0%;
+    border-style: hidden hidden solid hidden;
+    margin-left: 5%;
+    padding-right: 0%;
+    width: 111%;
+    border-color: black;
+    margin-top: 0%;
+    position: relative;
+    left: 6%;
+}
+
+div .col-sm-2 .labelform {
+    margin-left: 5%;
+    width: 105%;
+}
+
+div .col-sm-2 .labelform2 {
+    margin-left: 10%;
+    width: 105%;
+}
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+    div .codFab {
+        border-radius: 0%;
+        border-style: hidden hidden solid hidden;
+        margin-left: 3%;
+        margin-bottom: 1rem;
+        padding-right: 0%;
+        width: 67%;
+        border-color: black;
+    }
+
+    div .numProd {
+        border-radius: 0%;
+        border-style: hidden hidden solid hidden;
+        margin-left: 6%;
+        margin-bottom: 1rem;
+        padding-right: 0%;
+        width: 67%;
+        border-color: black;
+        position: relative;
+        left: 0%;
+    }
+
+    div .refFor {
+        border-radius: 0%;
+        border-style: hidden hidden solid hidden;
+        margin-left: 3%;
+        margin-bottom: 1rem;
+        padding-right: 0%;
+        width: 67%;
+        border-color: black;
+    }
+
+    div .numLoj {
+        border-radius: 0%;
+        border-style: hidden hidden solid hidden;
+        margin-left: 6%;
+        margin-bottom: 8%;
+        padding-right: 0%;
+        width: 67%;
+        border-color: black;
+        margin-top: 0%;
+        position: relative;
+        left: 0%;
+    }
+
+    div .col-sm-2 .labelform {
+        margin-left: 3%;
+        width: 90%;
+    }
+
+    div .col-sm-2 .labelform2 {
+        margin-left: 5%;
+        width: 105%;
+    }
+    
+}
 /* ---------------------------------------------------
     BUTTON
 ----------------------------------------------------- */
 
-div .buttoncard {
-    width: 45%;
-    padding: 10% 4% 4% 4%; 
-    position: relative;
-    float: left;
-    white-space: nowrap;
-}
 
-div .buttonCard1 {
-    width: 45%;
-    padding: 10% 4% 4% 4%;
-    position: relative;
-    float: right;
-    white-space: nowrap;
-}
 
-.buttoncard .buttonLimpar {
+div .buttonLimpar {
+    padding: 0% 0% 0% 0%;
     width: 100%;
+    height: 5vh;
+    left: 5%;
+    position: relative;
+}
+
+div .buttonFiltrar {
+    padding: 0% 0% 0% 0%;
+    width: 100%;
+    height: 5vh;
+    left: 22%;
+    position: relative;
+    
+}
+
+@media only screen and (min-width: 768px) {
+    div .buttonLimpar {
+        position: relative;
+        margin: 0% 0% 0% 3%;
+        width: 100%;
+        height: 4vh;
+        left: 0%;
+        position: relative;
+    }
+
+    div .buttonFiltrar  {
+        padding: 0% 0% 0% 0%;
+        position: relative;
+        margin: 0% 0% 0% 0%;
+        height: 4vh;
+        width: 100%;
+        left: 0%;
+        position: relative;
+    }
+
+}    
+
+div .buttonLimpar {
     padding-top: 1%;
-    background: #007bff;
+    background: white;
     border-radius: 0%;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
     border: none;
+    color: #007bff;   
 }
 
-.buttoncard .buttonLimpar:hover {
-    background: white;
-    color: #007bff;
+div .buttonLimpar:hover {
+    background: #007bff;
+    color:  white;
 }
 
-.buttoncard .buttonLimpar:focus {
-    background: white;
-    color: #007bff;
+div .buttonLimpar:focus {
+    background: #007bff;
+    color: white;
 }
 
 
 @media only screen and (min-width: 768px) {
-    .buttoncard .buttonLimpar {
-        width: 100%;
+    div .buttonLimpar {
         padding-top: 1%;
-        background: #007bff;
+        background:white;
         border-radius: 0%;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-        border: none;        
+        border: none;     
+        color: #007bff;   
     }
 }
 
-.buttonCard1 .buttonFiltrar {
-    width: 100%;
+div .buttonFiltrar {
     padding-top: 1%;
     background: #007bff;
     border-radius: 0%;
@@ -298,20 +432,21 @@ div .buttonCard1 {
     border: none;
 }
 
-.buttonCard1 .buttonFiltrar:hover {
+div .buttonFiltrar:hover {
     background: white;
     color: #007bff;
 }
 
 
-.buttonCard1 .buttonFiltrar:focus {
+div .buttonFiltrar:focus {
     background: white;
     color: #007bff;
 }
+
+
 
 @media only screen and (min-width: 768px) {
-    .buttonCard1 .buttonFiltrar {
-        width: 100%;
+    div .buttonFiltrar {
         padding-top: 1%;
         background: #007bff;
         border-radius: 0%;
