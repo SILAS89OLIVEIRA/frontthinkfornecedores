@@ -180,6 +180,8 @@ div ul {
     border-radius: 5px;
     top: 100%;
 
+   
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -192,6 +194,7 @@ div ul {
         border-radius: 5px;
         top: 100%;
         width: 8%;
+       
     }
 }
 
@@ -207,4 +210,9 @@ div ul {
 #BotaoSair .material-icons {
     vertical-align: middle;
     position: relative;
+    
 }
+
+#BotaoSair1{
+    float: right;
+ }

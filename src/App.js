@@ -56,3 +56,6 @@ export default class App extends Component {
     );
   }
 }
+
+///scrip pm2 aws
+//pm2 start --name frontthinkfornecedoresfinal npm -- start

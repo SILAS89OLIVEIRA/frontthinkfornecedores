@@ -4,7 +4,7 @@
 
 .table-responsive {
     padding: -0.5% 0% 1% 0%;
-    height: 50vh;
+    height: 50%;
     overflow: scroll;
 }
 
@@ -86,7 +86,7 @@ div .blocotabela {
 
 .blocotabela .cardFornecedor {
     width: 100%;
-    height:  65vh;
+    height:  100%;
     border-radius: 0%;
     border: none;
     position: relative;
@@ -100,7 +100,7 @@ div .blocotabela {
         border: none;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
         width: 100%;
-        height: 55vh;
+        height: 100%;
     }
 }
 
@@ -110,7 +110,7 @@ div .blocotabela {
         border: none;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.14);
         width: 100%;
-        height: 40vh;
+        height: 100%;
     }
 }
 
@@ -357,16 +357,14 @@ div .col-sm-2 .labelform2 {
 div .buttonLimpar {
     padding: 0% 0% 0% 0%;
     width: 100%;
-    height: 5vh;
-    left: 5%;
+  
     position: relative;
 }
 
 div .buttonFiltrar {
     padding: 0% 0% 0% 0%;
     width: 100%;
-    height: 5vh;
-    left: 22%;
+
     position: relative;
     
 }
@@ -376,8 +374,7 @@ div .buttonFiltrar {
         position: relative;
         margin: 0% 0% 0% 3%;
         width: 100%;
-        height: 4vh;
-        left: 0%;
+    
         position: relative;
     }
 
@@ -385,8 +382,7 @@ div .buttonFiltrar {
         padding: 0% 0% 0% 0%;
         position: relative;
         margin: 0% 0% 0% 0%;
-        height: 4vh;
-        width: 100%;
+    
         left: 0%;
         position: relative;
     }
@@ -454,3 +450,25 @@ div .buttonFiltrar:focus {
         border: none;	
     }
 }
+
+.hide {
+ display: none;
+}
+
+#formselect{
+    padding: 4px 4px 4px 4px;
+    width: 100%;
+    
+   
+
+}
+
+.enter{
+   margin: 5% 0% 0% 0%;
+}
+
+.centrocentro{
+    text-align-last: center;
+  
+}
+

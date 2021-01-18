@@ -14,7 +14,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
-import think from '../img/logo_branca.png'
+
 //import MaterialIcon from '@material/react-material-icon';
 
 const MenuSuperior = (props) => {
@@ -25,11 +25,19 @@ const MenuSuperior = (props) => {
   return (
     <div>
       <Navbar light expand="md">
-        <NavbarBrand href="/"><img src={think} width="140" height="80"/></NavbarBrand>
+        <NavbarBrand href="/"></NavbarBrand>
         <NavbarToggler onClick={toggle} className="Hamburger" />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-          <UncontrolledDropdown nav inNavbar>
+        
+         <Nav className="mr-auto" navbar>
+         <NavItem>
+              <NavLink href="/googledrive" >DOWNLOAD DE ARQUIVOS</NavLink>
+          </NavItem>
+          <NavItem>
+              <NavLink href="/vendaestoque" >CONSULTAS</NavLink>
+          </NavItem>
+
+     {/*    <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav className="tituloNome">
                 PRODUTO
               </DropdownToggle>
@@ -99,8 +107,8 @@ const MenuSuperior = (props) => {
                   Consulta Devolução
                 </DropdownItem>
               </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
+            </UncontrolledDropdown>*/}
+     </Nav> 
           <NavItem id="BotaoSair">
               <NavLink href="/" className="btn"><i className="material-icons md-36 souza-left ">exit_to_app</i>SAIR</NavLink>
           </NavItem>

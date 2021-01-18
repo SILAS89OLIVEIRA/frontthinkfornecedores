@@ -10,6 +10,7 @@ const Login = (props) => {
    
     const [usu_login, setLogin] = useState('');
     const [usu_senha, setSenha] = useState('');
+    
    
     const history = useHistory();
     
@@ -19,7 +20,7 @@ const Login = (props) => {
 
         try {
 const response = await api.get(`erp_usuarios/${usu_login}/${usu_senha}`);
-//console.log(response.data[0].codigofab[0].for_cod) 
+console.log(response.data[0].codigofab[0].for_cod) 
 
 localStorage.setItem('usu_login', response.data[0].usu_login)
 localStorage.setItem('usu_senha', response.data[0].usu_senha)
