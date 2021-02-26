@@ -404,18 +404,11 @@ const TabelaFornecedor = (props) => {
                             </Row>
 
                             <Row className="enter"> 
-                                <Col sm={6}  className="group-buttons" >   
-                                    <FormGroup className="group-buttons">
-                                        <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                    </FormGroup>
-                                </Col>
                                 <Col sm={6}>  
                                     <FormGroup className="group-buttons1">
                                         <Button className = "buttonFiltrar"  onClick={fetchRequest} > Filtrar </Button> 
                                     </FormGroup>
                                 </Col>
-                            </Row> 
-                            <Row className="enter1"> 
                                 <Col sm={6}>  
                                     <FormGroup className="group-buttons-imprimir">
                                         <Button className = "buttonImprimir" onClick={PDF1}>Baixar PDF</Button> 
@@ -530,11 +523,6 @@ const TabelaFornecedor = (props) => {
                             </Row>
 
                             <Row className="enter"> 
-                                <Col sm={6} className="group-buttons" >   
-                                    <FormGroup className="group-buttons">
-                                        <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                    </FormGroup>
-                                </Col>
                                 <Col sm={6}>  
                                     <FormGroup className="group-buttons1">
                                         <Button className = "buttonFiltrar"  onClick={fetchRequest2} sm={12} > Filtrar </Button> 
@@ -649,11 +637,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
       
                         <Row className="enter"> 
-                            <Col sm={6} className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6}>  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest3} sm={12} > Filtrar </Button> 
@@ -780,11 +763,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
       
                         <Row className="enter"> 
-                            <Col sm={6}  className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6} >  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest4} sm={12} > Filtrar </Button> 
@@ -905,11 +883,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
       
                         <Row className="enter"> 
-                            <Col sm={6} className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6}>  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest5} sm={12} > Filtrar </Button> 
@@ -1016,11 +989,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
 
                         <Row className="enter"> 
-                            <Col sm={6} className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6}>  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest6} sm={12} > Filtrar </Button> 
@@ -1134,11 +1102,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
       
                         <Row className="enter"> 
-                            <Col sm={6} className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6} >  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest7} sm={12} > Filtrar </Button> 
@@ -1267,11 +1230,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
       
                         <Row className="enter"> 
-                            <Col sm={6} className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6}>  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest8} sm={12} > Filtrar </Button> 
@@ -1416,11 +1374,6 @@ const TabelaFornecedor = (props) => {
                         </Row> 
             
                         <Row className="enter"> 
-                            <Col sm={6}  className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6}>  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest9} sm={12} > Filtrar </Button> 
@@ -1539,11 +1492,6 @@ const TabelaFornecedor = (props) => {
                             </Col>
                         </Row> 
                         <Row className="enter"> 
-                            <Col sm={6}  className="group-buttons" >   
-                                <FormGroup className="group-buttons">
-                                    <Button className = "buttonLimpar" type='reset'> Limpar </Button> 
-                                </FormGroup>
-                            </Col>
                             <Col sm={6}>  
                                 <FormGroup className="group-buttons1">
                                     <Button className = "buttonFiltrar"  onClick={fetchRequest10} sm={12} > Filtrar </Button> 

@@ -10,9 +10,9 @@
 .tabela {
     overflow-y: scroll;
     margin: 0 -15% 0% 4%;
-    height: 375px;
+    height: 365px;
     text-align: center;
-    width: 112%;
+    width: 111%;
 }
 
 
@@ -155,14 +155,14 @@
 
 
 .revistaLabel {
-    margin: 0 0 0 6%;
+    margin: 0 0 0 7%;
 }
 
 #revista {
     border-style: hidden hidden solid hidden;
     border-radius: 0%;
-    width: 46%;
-    margin: 0 0 0 6%;
+    width: 47%;
+    margin: 0 0 0 7%;
     border-bottom: 1px solid black;
     font-size: 2vh;
 }
@@ -186,14 +186,14 @@
 
 
 .revistaLabel2 {
-    margin: 0 2% 0 14%;
+    margin: 0 2% 0 15%;
 }
 
 #revista2 {
     border-style: hidden hidden solid hidden;
     border-radius: 0%;
     width: 100%;
-    margin: 0 0 0 14%;
+    margin: 0 0 0 15%;
     border-bottom: 1px solid black;
     font-size: 2vh;
 }
@@ -240,14 +240,14 @@
 
 
 .revistaLabel3 {
-    margin: 0 2% 0 14%;
+    margin: 0 2% 0 15%;
 }
 
 #revista3 {
     border-style: hidden hidden solid hidden;
     border-radius: 0%;
     width: 100%;
-    margin: 0 0 0 14%;
+    margin: 0 0 0 15%;
     border-bottom: 1px solid black;
     font-size: 2vh;
 }
@@ -295,14 +295,14 @@
 
 
 .revistaLabel4 {
-    margin: 0 2% 0 14%;
+    margin: 0 2% 0 15%;
 }
 
 #revista4 {
     border-style: hidden hidden solid hidden;
     border-radius: 0%;
     width: 100%;
-    margin: 0 0 0 14%;
+    margin: 0 0 0 15%;
     border-bottom: 1px solid black;
     font-size: 2vh;
 }
@@ -542,7 +542,7 @@ div .buttonLimpar:focus {
 div .buttonFiltrar  {
     padding: 0% 0% 2,5% 0%;
     position: relative;
-    margin: 0% 0% 0% 8%;
+    margin: 0% 0% 0% 15%;
     width: 100%;
 }
  
@@ -570,8 +570,8 @@ div .buttonFiltrar:focus {
 
 @media only screen and (max-width: 768px) {
     div .buttonFiltrar {
-        padding: 0% 0% 0% 0%;
-        width: 100%;
+        padding: 2% 0;
+        width: 102%;
         position: relative;
         margin:0% 0% 0% 5%;
     }
@@ -592,7 +592,7 @@ div .buttonFiltrar:focus {
 .buttonImprimir {
     padding: 0% 0% 0% 0%;
     width: 100%;
-    margin: 0% 0% 0% 0%;
+    margin: 0% 0% 0% 15%;
     position: relative;
 }
 
@@ -604,7 +604,7 @@ div .buttonImprimir {
     border-radius: 0%;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
     border: none;	
-    margin: 0% 0% 0% 15%;
+    margin: 0% 0% 0% 8%;
 }
 
 div .buttonImprimir:hover {
@@ -626,13 +626,13 @@ div .buttonImprimir:focus {
         border-radius: 0%;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
         border: none;
-        padding: 0% 0% 0% 0%;
+        padding: 2% 0;
         margin: 0% 0% 0% 5%;
     }
 
     .buttonImprimir {
         padding: 0% 0% 0% 0%;
-        width: 100%;
+        width: 102%;
         position: relative;
     }
 }
@@ -642,10 +642,10 @@ div .buttonImprimir:focus {
 ----------------------------------------------------- */
 
 #test-table-xls-button {
-    padding: 0% 0% 2.5% 0%;
+    padding: 4% 0%;
     width: 100%;
     position: relative;
-    margin:0% 2% 0% 8%;
+    margin:0% 2% 0% 15%;
 }
 
 div #test-table-xls-button {
@@ -672,7 +672,7 @@ div #test-table-xls-button:focus {
 
 @media only screen and (max-width: 768px) {
     div #test-table-xls-button {
-        padding-top: 1%;
+        padding: 2% 0;
         background: #007bff;
         border-radius: 0%;
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
@@ -683,7 +683,7 @@ div #test-table-xls-button:focus {
     #test-table-xls-button {
         padding: 0% 0% 0% 0%;
         margin:0% 0% 0% 5%;
-        width: 100%;
+        width: 102%;
         position: relative;
     }
     

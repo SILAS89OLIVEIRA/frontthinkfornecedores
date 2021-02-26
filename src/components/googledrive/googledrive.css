@@ -14,8 +14,13 @@ iframe {
 
 @media only screen and (max-width: 768px) {
   iframe {
-    margin-left: 15%;
-    width: 85%;
+    margin-left: 1%;
+    width: 97%;
+  }
+
+  #scroll {
+    overflow-y:scroll;
+    overflow-x:hidden;
   }
 
   ::-webkit-scrollbar {
