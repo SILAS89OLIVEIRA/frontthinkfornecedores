@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {  useHistory } from 'react-router-dom';
 import "./Login.css";
 import api from '../../api';
-import { Input, Button, Label, Media} from 'reactstrap';
+import { Input, Button, Label, Media, Row, Col, FormGroup, Form} from 'reactstrap';
 import think from '../img/logo_branca.png'
 
 
@@ -11,6 +11,28 @@ const Login = (props) => {
     const [usu_login, setLogin] = useState('');
     const [usu_senha, setSenha] = useState('');
     
+    const [isActive1, setIsActive1] = useState(false);
+    const [isActive2, setIsActive2] = useState(false);
+
+    function onChange1(ev) {
+        const {nome, value} = ev.target;
+        setLogin(value)
+        if (ev !== '') {
+            setIsActive1(true);
+          } else {
+            setIsActive1(false);
+          }
+    }
+
+    function onChange2(ev) {
+        const {name, value} = ev.target;
+        setSenha(value)
+        if (ev !== '') {
+            setIsActive2(true);
+          } else {
+            setIsActive2(false);
+          }
+    }
    
     const history = useHistory();
     
@@ -35,37 +57,43 @@ alert('falha')
 
     
     return (
-    <div className="root2">
-        <form onSubmit={handleLogin}>
-        <div id="loginSistem" className="container"> 
-            <div className="row">
-                <div id="formLogin" >
-                    <h2 id="headerLogin" className="text">FORNECEDORES</h2>
-                </div>
-            </div>
-            <div className="row1">
-                <div id="nome">
-                    <Input className="form" type="text" placeholder=" " value={usu_login} onChange={e => setLogin(e.target.value)}></Input>
-                    <Label id="label1" className="label-nome"><i className="material-icons left">person</i>Usuário:</Label>
-                </div>
-            </div>
-            <div className="row2">
-                <div id="senha">
-                    <Input className="form" type="text" placeholder=" " value={usu_senha} onChange={e => setSenha(e.target.value)}></Input>
-                    <Label id="label" className="label-nome"><i className="material-icons left">lock</i>Senha:</Label>
-                </div>
-            </div>
-
-            <div className="row3">
-                <div className="btn">
-                    <Button id="form-login" className="efeito efeito-1" type="submit">LOGIN</Button>
-                </div>
-            </div>
-            <div className="logo">
-                <Media src={think} />
-            </div>  
-        </div> </form>
-    </div>
+        <div className="root2">
+        <Form id="loginSistem" onSubmit={handleLogin}>
+            <Row className="row">
+                <Col sm={6}>
+                    <FormGroup className="title">  
+                        <h2 id="title-text" className="text">THINK FORNECEDOR</h2>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={6}>
+                    <FormGroup className="login">
+                        <Input className="form" type="text" placeholder=" " id="login" value={usu_login} onChange={onChange1}></Input>
+                        <Label className={ isActive1 ? "Active" : ""}><i className="material-icons left">person</i>Usuário:</Label>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={6}>
+                    <FormGroup className="senha">
+                        <Input className="form" type="password" placeholder=" " id="senha" value={usu_senha} onChange={onChange2}></Input>
+                        <Label  className={ isActive2 ? "Active" : ""}><i className="material-icons left">lock</i>Senha:</Label>
+                    </FormGroup>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={6}>
+                    <FormGroup>
+                        <Button id="buttonlogin" className="efeito efeito-1" type="submit">LOGIN<i className="material-icons left">login</i></Button>
+                    </FormGroup>
+                </Col>
+            </Row>
+        </Form>
+        <Row className="logo">
+                <Media id="thinklogo" src={think} />
+        </Row>
+    </div>  
     )
 }
 

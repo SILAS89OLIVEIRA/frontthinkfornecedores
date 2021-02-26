@@ -148,7 +148,7 @@ const VendaEstoque = (props) => {
             <div className="root3">
                 <div className="geral">
                     <div className="container1">
-                        <hr></hr>
+                        <p></p>
                         {ultimaatualizacao.map(ultimaatualizacao => (
                             <b key={ultimaatualizacao} id="ultimaAtualizacaoMov">Última atualização: {ultimaatualizacao.movfor_hora} </b>
                         ))}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./down.css";
-
+import {Button} from "reactstrap"
 const urlToDownload = "https://docs.google.com/uc?export=download&id=10Blt3dts1zMIAXIT_D8YdVzeeKFKEMM3";
 
 export default function App() {
@@ -10,14 +10,14 @@ export default function App() {
     <div className="App">
       <h1>DevPleno - Download from React</h1>
       <p>
-        <button
+        <Button
           onClick={() => {
             setDownload(urlToDownload);
             setCount((old) => old + 1);
           }}
         >
           Download
-        </button>
+        </Button>
       </p>
       <p>{download}</p>
       {download && (

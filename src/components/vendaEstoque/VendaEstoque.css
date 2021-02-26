@@ -236,3 +236,12 @@ div .bloco .card4 button {
     border: hidden;
 }
 
+
+/* ---------------------------------------------------
+    BOTÃO
+----------------------------------------------------- */
+
+.container1 {
+    border-style: hidden hidden solid hidden; 
+    border: none
+}

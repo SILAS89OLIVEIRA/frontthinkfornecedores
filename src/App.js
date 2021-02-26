@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 //import Header from "./components/header/Header";
 import Routes from './routes';
 //import TabelaFornecedor from './components/tabelaFornecedor/TabelaFornecedor';
+import "react-datepicker/dist/react-datepicker.css";
 
 /*class App extends Component{
 

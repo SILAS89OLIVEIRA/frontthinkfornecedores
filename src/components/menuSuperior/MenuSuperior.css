@@ -20,8 +20,7 @@ nav a.navbar-brand {
 
 @media only screen and (min-width: 768px) {
     nav a.navbar-brand {
-        align-items: center;
-        margin-right: 5%;
+        margin-right: 2%;
         color: white;
         margin-left: 0%;
 
@@ -60,18 +59,13 @@ nav a.navbar-brand {
     div ul li {
         border-radius: 2px;
         color: white;
+        margin-left: 0%;
     }
-}
-
-div .menus {
-    background: #1E90FF;
-    margin-top: 10px;
 }
 
 @media only screen and (min-width: 768px) {
     div .menus {
         background: #1E90FF;
-        margin-top: 10px;
         -webkit-box-shadow: 0px 0px 5px black; 	
         -moz-box-shadow: 0px 0px 5px black; 	
                 box-shadow: 0px 0px 5px black; 	
@@ -146,7 +140,31 @@ div ul li .menus {
     div ul li .menus {
         border: 0;
         border-radius: 5px;
-        margin-top: 15%;
+        margin-top: 0%;
+    }
+
+    div .nav-link {
+        color: white;
+        font-size: 16px;
+        margin-left: 4%;
+    } 
+
+    div #menus {
+        color: white;
+        font-size: 15px;
+        padding: 0%;
+        margin: 0%;
+    } 
+
+    #geral {
+        margin-left: 0%;
+        padding: 0%;
+        width: 100%;
+    }
+    
+    #li2 {
+
+        margin-left: 2%;
     }
 }
 
@@ -157,15 +175,21 @@ div ul {
 
 @media only screen and (min-width: 768px) {
     div ul {
-        padding: 0 0 0 0;
+        padding: 0 10% 0 0%;
         border: none;
+    }
+
+    .material-icons {
+        vertical-align: middle;
+        position: relative;
     }
 }
 
 .material-icons {
     vertical-align: middle;
-    padding: 0 5% 0 0;
+    position: relative;
 }
+
 
 /* ---------------------------------------------------
    SAIR
@@ -196,6 +220,13 @@ div ul {
         width: 8%;
        
     }
+
+    a .img {
+        width: 16vh;
+        height: 10vh;
+    }
+
+    
 }
 
 #BotaoSair .btn {
@@ -216,3 +247,13 @@ div ul {
 #BotaoSair1{
     float: right;
  }
+
+ /* ---------------------------------------------------
+   LOGO
+----------------------------------------------------- */
+
+.img {
+    width: 22vh;
+    height: 14vh;
+}
+
