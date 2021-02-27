@@ -17,11 +17,11 @@ const GoogleDrive = (props) => {
 
 
     </div>
-    <div>
+    <div className="googleDrive">
       <h1 className="tittle">Download de Arquivos</h1>
   <center>
     {/*<iframe src="https://googledriveembedder.collegefam.com/?key=AIzaSyBxXtlZCc1ocHHoG6cHDilaxdw2GCYf5Jc&folderid=1z39TV9L1RmOyEkkR2LQqPayk5GIDwYgH"></iframe>*/}
-    <iframe id="scroll" src="https://drive.google.com/embeddedfolderview?id=1z39TV9L1RmOyEkkR2LQqPayk5GIDwYgH#grid"></iframe>
+    <iframe id="scroll"  src="https://drive.google.com/embeddedfolderview?id=1z39TV9L1RmOyEkkR2LQqPayk5GIDwYgH#grid"></iframe>
     </center>
 
     </div>
