@@ -16,26 +16,15 @@
 }
 
 
-.cabecalho {
-    background: #007bff;
-    color:  white;
-}
 
-.cabecalho thead {
-    position: sticky;
-    top: 0;
-}
-
-@media only screen and (max-width: 768px) {
-    .cabecalho {
-        background: #007bff;
-        color:  white;
-    }
-    
+@media only screen and (max-width: 768px) {    
     .tabela {
         margin: 0 -15% 0% 3%;
         width: 111%;
     }
+
+
+
 
 }
 
@@ -734,4 +723,11 @@ div #test-table-xls-button:focus {
         border-radius: 0%;
         width: 80%;
     }
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background: #007bff;
+    color:  white;
 }

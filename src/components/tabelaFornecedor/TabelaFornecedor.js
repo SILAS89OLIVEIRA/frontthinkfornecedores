@@ -434,7 +434,7 @@ const TabelaFornecedor = (props) => {
                 {/*TABELA*/}
                 <Col sm={8}>
                     <div className='tabela'>
-                        <Table responsive id="relatorio1" >
+                        <Table id="relatorio1" >
                             <thead className="cabecalho" >
                                 <tr>
                                     <th> # </th> 
