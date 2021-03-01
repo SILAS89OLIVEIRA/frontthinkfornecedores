@@ -13,9 +13,16 @@
     height: 365px;
     text-align: center;
     width: 111%;
+ 
 }
 
-
+th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #007bff;
+    color:  white;
+}
 
 @media only screen and (max-width: 768px) {    
     .tabela {
@@ -723,11 +730,4 @@ div #test-table-xls-button:focus {
         border-radius: 0%;
         width: 80%;
     }
-}
-
-th {
-    position: sticky;
-    top: 0;
-    background: #007bff;
-    color:  white;
 }

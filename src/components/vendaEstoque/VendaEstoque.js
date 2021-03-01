@@ -167,7 +167,7 @@ const VendaEstoque = (props) => {
                                             <CardTitle>Venda Hoje</CardTitle>
 
                                             <p><span className="quantidade">Quantidade: {vendasdia.totalpeca}</span></p>
-                                            <p><span className="valorTotal">Valor Total: {vendasdia.total}</span></p>
+                                            <p><span className="valorTotal">Valor Total: R$:{vendasdia.total}</span></p>
                                             <p>
                                                 <span className="periodo1">De: {hoje().formatado}</span>
                                                 <span className="periodo2"> Ate: {hoje().formatado}</span>
@@ -182,7 +182,7 @@ const VendaEstoque = (props) => {
                                         <Card className="card2">
                                             <CardTitle>Venda Quinzena</CardTitle>
                                             <p><span className="quantidade">Quantidade: {vendas.totalpeca}</span></p>
-                                            <p><span className="valorTotal">Valor Total: {vendas.total}</span></p>
+                                            <p><span className="valorTotal">Valor Total: R$:{vendas.total}</span></p>
                                             <p>
                                                 <span className="periodo1">De: {datIniQuinz.split('-')[2] + '/' + datIniQuinz.split('-')[1] + '/' + datIniQuinz.split('-')[0]}</span>
                                                 <span className="periodo2"> Ate: {datFimQuinz.split('-')[2] + '/' + datFimQuinz.split('-')[1] + '/' + datFimQuinz.split('-')[0]}</span>
@@ -199,7 +199,7 @@ const VendaEstoque = (props) => {
                                         <Card className="card3">
                                             <CardTitle>Venda Últimos 30 dias</CardTitle>
                                             <p><span className="quantidade">Quantidade: {vendasmes.totalpeca}</span></p>
-                                            <p><span className="valorTotal">Valor Total: {vendasmes.total}</span></p>
+                                            <p><span className="valorTotal">Valor Total: R$:{vendasmes.total}</span></p>
                                             <p>
                                                 <span className="periodo1">De: {dataMes.split('-')[2] + '/' + dataMes.split('-')[1] + '/' + dataMes.split('-')[0]}</span>
                                                 <span className="periodo2"> Ate: {hoje().formatado}</span>
@@ -215,7 +215,7 @@ const VendaEstoque = (props) => {
                                         <Card className="card4">
                                             <CardTitle>Estoque</CardTitle>
                                             <p><span className="quantidade">Quantidade: {Estoquetotal.totalpeca}</span></p>
-                                            <p><span className="valorTotal">Valor Total: {Estoquetotal.total}</span></p>
+                                            <p><span className="valorTotal">Valor Total: R$:{Estoquetotal.total}</span></p>
                                             <p>
                                                 <span className="periodo1">Estoque Total</span>
                                             </p>
