@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import {StickyTable, Rows, Cell} from 'react-sticky-table';
 import "./TabelaFornecedor.css";
 import { Table, FormGroup, Form, Label, Row, Button, Col, Input } from 'reactstrap';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
@@ -6,12 +7,15 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { ptBR } from 'date-fns/locale'
 import moment from 'moment';
+//import BasicExample from '../table/BasicExample';
 import $ from "jquery";
+
 
 import api from '../../api';
 
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
+import { roundToNearestMinutesWithOptions } from "date-fns/fp";
 
 
 
@@ -430,10 +434,43 @@ const TabelaFornecedor = (props) => {
                         </Form>
                     </div>
                 </Col>
-
+               
+              
+                
                 {/*TABELA*/}
                 <Col sm={8}>
-                    <div className='tabela'>
+
+                <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>NOME FOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COD. FOR.</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTDE. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO(V/E)</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL.ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeral.map((vendeestgeral, idx) => ( 
+            <Rows  key={idx}  vendeestgeral={vendeestgeral}className = "cabecalho2">
+              <Cell> { vendeestgeral.nome_fornecedor.substring(0,10) }</Cell>
+              <Cell> { vendeestgeral.cod_fabricante }</Cell>
+              <Cell>{ vendeestgeral.venda_total_venda }</Cell>
+              <Cell>{ vendeestgeral.qtd_pecas_vendidas }</Cell>
+              <Cell>{ vendeestgeral.giro }</Cell>
+              <Cell>{ vendeestgeral.venda_total_estoque }</Cell>
+              <Cell>{ vendeestgeral.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                    <div className='tabela hide'>
                         <Table id="relatorio1" >
                             <thead className="cabecalho" >
                                 <tr>
@@ -464,6 +501,11 @@ const TabelaFornecedor = (props) => {
                         </Table>
                     </div>
                 </Col>
+     
+
+ 
+  
+               
             </Row>
         </div> 
 
@@ -550,8 +592,41 @@ const TabelaFornecedor = (props) => {
                     </div>
                 </Col>
                   
+
+                  
                 <Col sm={8} >
-                    <div className='tabela'>
+                    
+                <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>NOME FOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COD. FOR.</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTDE. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO(V/E)</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL.ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeralteste.map((vendeestgeralteste, idx) => ( 
+            <Rows  key={idx}  vendeestgeral={vendeestgeralteste}className = "cabecalho2">
+              <Cell> { vendeestgeralteste.nome_fornecedor.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralteste.cod_fabricante }</Cell>
+              <Cell>{ vendeestgeralteste.venda_total_venda }</Cell>
+              <Cell>{ vendeestgeralteste.qtd_pecas_vendidas }</Cell>
+              <Cell>{ vendeestgeralteste.giro }</Cell>
+              <Cell>{ vendeestgeralteste.venda_total_estoque }</Cell>
+              <Cell>{ vendeestgeralteste.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                    <div className='tabela hide'>
                         <Table responsive id="relatorio2" >
                             <thead className="cabecalho" fixed>
                                 <tr>
@@ -663,9 +738,48 @@ const TabelaFornecedor = (props) => {
                     </Form>
                 </div>
             </Col>
-                  
+           
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>NOME PRODUTO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>Nº PRODUTO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>REVISTA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PAGINA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>REF. FORNECEDOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PREÇO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeralitem.map((vendeestgeralitem, idx) => ( 
+            <Rows  key={idx}  vendeestgeralitem={vendeestgeralitem}className = "cabecalho2">
+              <Cell> { vendeestgeralitem.produtos_descricao.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralitem.num_produto }</Cell>
+              <Cell>{ vendeestgeralitem.nome_revista }</Cell>
+              <Cell>{ vendeestgeralitem.produtos_pagina }</Cell>
+              <Cell>{ vendeestgeralitem.produtos_reffor }</Cell>
+              <Cell>{ vendeestgeralitem.preco_cheio1 }</Cell>
+              <Cell>{ vendeestgeralitem.venda_total_venda} </Cell>
+              <Cell>{ vendeestgeralitem.qtd_pecas_vendidas} </Cell>
+              <Cell>{ vendeestgeralitem.giro} </Cell>
+              <Cell>{ vendeestgeralitem.venda_total_estoque} </Cell>
+              <Cell>{ vendeestgeralitem.qtd_estoque} </Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
                     <Table responsive id="relatorio3" >
                         <thead className="cabecalho">
                             <tr>
@@ -677,8 +791,8 @@ const TabelaFornecedor = (props) => {
                             <th> REF. FORNECEDOR </th> 
                             <th> PREÇO </th> 
                             <th> VAL. VENDA </th>
-                            <th> QTD.VENDA </th>
-                            <th> GIRO </th>
+                            <th> ENDA </th>
+                            <th> GIQTD.VRO </th>
                             <th> VAL. ESTOQUE</th>
                             <th> QTD. ESTOQUE </th>
                             </tr> 
@@ -694,7 +808,6 @@ const TabelaFornecedor = (props) => {
                             <td> { vendeestgeralitem.produtos_pagina } </td> 
                             <td> { vendeestgeralitem.produtos_reffor }</td> 
                             <td> { vendeestgeralitem.preco_cheio1 }</td> 
-                            
                             <td> { vendeestgeralitem.venda_total_venda }</td> 
                             <td> { vendeestgeralitem.qtd_pecas_vendidas }</td> 
                             <td> { vendeestgeralitem.giro }</td>
@@ -788,10 +901,45 @@ const TabelaFornecedor = (props) => {
                         </Row>
                     </Form>
                 </div>
-            </Col>
-                  
+            
+                </Col>
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>TAMANHO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>Nº ITEM</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PREÇO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeralitemtam.map((vendeestgeralitemtam, idx) => ( 
+            <Rows  key={idx}  vendeestgeralitemtam={vendeestgeralitemtam}className = "cabecalho2">
+              <Cell> { vendeestgeralitemtam.tam_nom.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralitemtam.procor_descricao_cor }</Cell>
+              <Cell>{ vendeestgeralitemtam.num_produto }</Cell>
+              <Cell>{ vendeestgeralitemtam.preco_cheio1 }</Cell>
+              <Cell>{ vendeestgeralitemtam.venda_total_venda} </Cell>
+              <Cell>{ vendeestgeralitemtam.qtd_pecas_vendidas} </Cell>
+              <Cell>{ vendeestgeralitemtam.giro} </Cell>
+              <Cell>{ vendeestgeralitemtam.venda_total_estoque} </Cell>
+              <Cell>{ vendeestgeralitemtam.qtd_estoque} </Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
                     <Table responsive id="relatorio4" >
                         <thead className="cabecalho">
                             <tr>
@@ -816,7 +964,6 @@ const TabelaFornecedor = (props) => {
                             <td> { vendeestgeralitemtam.procor_descricao_cor }</td> 
                             <td> { vendeestgeralitemtam.num_produto }</td> 
                             <td> { vendeestgeralitemtam.preco_cheio1 } </td> 
-                    
                             <td> { vendeestgeralitemtam.venda_total_venda }</td> 
                             <td> { vendeestgeralitemtam.qtd_pecas_vendidas }</td> 
                             <td> { vendeestgeralitemtam.giro }</td> 
@@ -909,10 +1056,47 @@ const TabelaFornecedor = (props) => {
                     </Form>
                 </div>
             </Col>
-                  
+          
 
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+            <Cell style={{background: '#007bff', color: 'white'}}>LOJA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>TAMANHO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>Nº ITEM</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PREÇO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeralitemloja.map((vendeestgeralitemloja, idx) => ( 
+            <Rows  key={idx}  vendeestgeralitemloja={vendeestgeralitemloja}className = "cabecalho2">
+              <Cell> { vendeestgeralitemloja.lojas_nome.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralitemloja.tam_nom }</Cell>
+              <Cell> { vendeestgeralitemloja.procor_descricao_cor }</Cell>
+              <Cell>{ vendeestgeralitemloja.num_produto }</Cell>
+              <Cell>{ vendeestgeralitemloja.preco_cheio1 }</Cell>
+              <Cell>{ vendeestgeralitemloja.venda_total_venda} </Cell>
+              <Cell>{ vendeestgeralitemloja.qtd_pecas_vendidas} </Cell>
+              <Cell>{ vendeestgeralitemloja.giro} </Cell>
+              <Cell>{ vendeestgeralitemloja.venda_total_estoque} </Cell>
+              <Cell>{ vendeestgeralitemloja.qtd_estoque} </Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
                     <Table responsive id="relatorio5" >
                         <thead className="cabecalho">
                             <tr>
@@ -1015,10 +1199,43 @@ const TabelaFornecedor = (props) => {
                     </Form>
                 </div>
             </Col>
-                  
+           
+              
 
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>NOME FOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>LOJA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTDE. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO(V/E)</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL.ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeralacumloja.map((vendeestgeralacumloja, idx) => ( 
+            <Rows  key={idx}  vendeestgeralacumloja={vendeestgeralacumloja}className = "cabecalho2">
+              <Cell> { vendeestgeralacumloja.nomefabrica.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralacumloja.lojas_nome }</Cell>
+              <Cell>{ vendeestgeralacumloja.venda_total_venda }</Cell>
+              <Cell>{ vendeestgeralacumloja.qtd_pecas_vendidas }</Cell>
+              <Cell>{ vendeestgeralacumloja.giro }</Cell>
+              <Cell>{ vendeestgeralacumloja.venda_total_estoque }</Cell>
+              <Cell>{ vendeestgeralacumloja.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+
+                <div className='tabela hide'>
                     <Table responsive id="relatorio6" >
                         <thead className="cabecalho">
                             <tr>
@@ -1128,9 +1345,42 @@ const TabelaFornecedor = (props) => {
                     </Form>
                 </div>
             </Col>
+
+     
                   
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>NOME FOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COD. FOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTDE. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO(V/E)</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL.ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD.ESTOQUE</Cell>
+  
+
+            </Rows>
+            {vendeestgeralacumlojaloja.map((vendeestgeralacumlojaloja, idx) => ( 
+            <Rows  key={idx}  vendeestgeralacumlojaloja={vendeestgeralacumlojaloja}className = "cabecalho2">
+              <Cell> { vendeestgeralacumlojaloja.nome_fornecedor.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralacumlojaloja.cod_fabricante }</Cell>
+              <Cell>{ vendeestgeralacumlojaloja.venda_total_venda }</Cell>
+              <Cell>{ vendeestgeralacumlojaloja.qtd_pecas_vendidas }</Cell>
+              <Cell>{ vendeestgeralacumlojaloja.giro }</Cell>
+              <Cell>{ vendeestgeralacumlojaloja.venda_total_estoque }</Cell>
+              <Cell>{ vendeestgeralacumlojaloja.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
                     <Table responsive id="relatorio7" >
                         <thead className="cabecalho">
                             <tr>
@@ -1255,9 +1505,54 @@ const TabelaFornecedor = (props) => {
                     </Form>
                 </div>
             </Col>
+
+           
                   
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>NOME PRODUTO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>Nº PRODUTO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>REVISTA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PAGINA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>REF. FORNECEDOR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PREÇO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. ESTOQUE</Cell>
+
+                              
+  
+
+            </Rows>
+            {vendeestgeralacumlojalojaloja.map((vendeestgeralacumlojalojaloja, idx) => ( 
+            <Rows  key={idx}  vendeestgeralacumlojalojaloja={vendeestgeralacumlojalojaloja}className = "cabecalho2">
+              <Cell> { vendeestgeralacumlojalojaloja.produtos_descricao.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralacumlojalojaloja.num_produto }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.nome_revista }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.produtos_pagina }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.produtos_reffor }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.preco_cheio1 }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.venda_total_venda }</Cell>
+
+              <Cell>{ vendeestgeralacumlojalojaloja.qtd_pecas_vendidas }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.giro }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.venda_total_estoque }</Cell>
+              <Cell>{ vendeestgeralacumlojalojaloja.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+      
+                <div className='tabela hide'>
                     <Table responsive id="relatorio8" >
                         <thead className="cabecalho">
                             <tr>
@@ -1268,8 +1563,6 @@ const TabelaFornecedor = (props) => {
                             <th> PAGINA </th> 
                             <th> REF. FORNECEDOR </th>
                             <th> PREÇO </th>
-                            
-
                             <th> VAL. VENDA </th>
                             <th> QTD. VENDA </th>
                             <th> GIRO </th>
@@ -1289,8 +1582,8 @@ const TabelaFornecedor = (props) => {
                             <td> { vendeestgeralacumlojalojaloja.produtos_pagina }</td> 
                             <td> { vendeestgeralacumlojalojaloja.produtos_reffor }</td> 
                             <td> { vendeestgeralacumlojalojaloja.preco_cheio1 }</td> 
-                        
                             <td> { vendeestgeralacumlojalojaloja.venda_total_venda }</td> 
+
                             <td> { vendeestgeralacumlojalojaloja.qtd_pecas_vendidas }</td>          
                             <td> { vendeestgeralacumlojalojaloja.giro }</td> 
                             <td> { vendeestgeralacumlojalojaloja.venda_total_estoque }</td> 
@@ -1397,12 +1690,54 @@ const TabelaFornecedor = (props) => {
                                 </FormGroup>
                             </Col>
                         </Row>
-                    </Form>
-                </div>
+                   </Form>
+                 </div>
             </Col>
+        
                   
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>LOJA </Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>TAMANHO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>Nº ITEM</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PREÇO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. ESTOQUE</Cell>
+
+
+      
+  
+
+            </Rows>
+            {vendeestgeralacumloja4.map((vendeestgeralacumloja4, idx) => ( 
+            <Rows  key={idx}  vendeestgeralacumloja4={vendeestgeralacumloja4}className = "cabecalho2">
+              <Cell> { vendeestgeralacumloja4.lojas_nome.substring(0,10) }</Cell>
+              <Cell> { vendeestgeralacumloja4.tam_nom }</Cell>
+              <Cell>{ vendeestgeralacumloja4.procor_descricao_cor }</Cell>
+              <Cell>{ vendeestgeralacumloja4.num_produto }</Cell>
+              <Cell>{ vendeestgeralacumloja4.preco_cheio1 }</Cell>
+              <Cell>{ vendeestgeralacumloja4.venda_total_venda }</Cell>
+
+              <Cell>{ vendeestgeralacumloja4.qtd_pecas_vendidas }</Cell>
+              <Cell>{ vendeestgeralacumloja4.giro }</Cell>
+              <Cell>{ vendeestgeralacumloja4.venda_total_estoque }</Cell>
+              <Cell>{ vendeestgeralacumloja4.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
                     <Table responsive id="relatorio9" >
                         <thead className="cabecalho">
                             <tr>
@@ -1518,9 +1853,50 @@ const TabelaFornecedor = (props) => {
                     </Form>
                 </div>
             </Col>
-                  
+
             <Col sm={8}>
-                <div className='tabela'>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>LOJA </Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>TAMANHO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COR</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>Nº ITEM</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PREÇO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. VENDA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>GIRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>VAL. ESTOQUE</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTD. ESTOQUE</Cell>
+
+
+      
+  
+
+            </Rows>
+            {todositensporcodigoloja.map((todositensporcodigoloja, idx) => ( 
+            <Rows  key={idx}  todositensporcodigoloja={todositensporcodigoloja}className = "cabecalho2">
+              <Cell> { todositensporcodigoloja.lojas_nome.substring(0,10) }</Cell>
+              <Cell> { todositensporcodigoloja.tam_nom }</Cell>
+              <Cell>{ todositensporcodigoloja.procor_descricao_cor }</Cell>
+              <Cell>{ todositensporcodigoloja.num_produto }</Cell>
+              <Cell>{ todositensporcodigoloja.preco_cheio1 }</Cell>
+              <Cell>{ todositensporcodigoloja.venda_total_venda }</Cell>
+
+              <Cell>{ todositensporcodigoloja.qtd_pecas_vendidas }</Cell>
+              <Cell>{ todositensporcodigoloja.giro }</Cell>
+              <Cell>{ todositensporcodigoloja.venda_total_estoque }</Cell>
+              <Cell>{ todositensporcodigoloja.qtd_estoque }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
                     <Table responsive id="relatorio10" >
                         <thead className="cabecalho">
                             <tr>

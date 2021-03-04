@@ -43,6 +43,7 @@
     "react-iframe": "^1.8.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-sticky-table": "^5.1.11",
     "reactstrap": "^8.5.1",
     "serve": "^11.3.2",
     "spdy-transport": "^3.0.0",
