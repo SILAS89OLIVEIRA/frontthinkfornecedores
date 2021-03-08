@@ -69,9 +69,9 @@ useEffect(() => {
       <div >  
         <center className="centrocentro">   
           <FormGroup id='formselect' >
-            <Label for="exampleSelect" className="labelSelect">Tipos de Consultas</Label>
+            <Label for="exampleSelect" className="labelSelect">Tipos de Downloads</Label>
               <Input type="select" name="select" id="select" >
-                <option value='#div100'>Selecione Uma Opção de Consulta</option>
+                <option value='#div100'>Selecione Uma Opção</option>
                 <option value='#div1'>Arquivos Coleções</option>
                 <option value='#div2'>Arquivos Revista</option>
                 <option value='#div3'>Arquivos Gerais</option>
