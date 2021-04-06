@@ -257,10 +257,20 @@ const TabelaFornecedor = (props) => {
        
       
         pdf.autoTable({ html: '#relatorio1' })
+
+
+        if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())) {
+            window.open(pdf.output('bloburl', { filename: fileName }))
+        } else {
+            pdf.save(fileName)
+        }
       
-        pdf.save('relatorio1.pdf');
+     //   pdf.save('relatorio1.pdf');
        //window.open(doc.output("relatorio1.pdf"), "_blank");
       };
+
+
+
 
       
     function PDF2() {
