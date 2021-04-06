@@ -260,9 +260,9 @@ const TabelaFornecedor = (props) => {
 
 
         if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())) {
-            window.open(pdf.output('relatorio1.pdf',  "_blank"))
+            window.open(pdf.output('relatorio1.pdf', { pdf:pdf }))
         } else {
-            pdf.save('relatorio1.pdf')
+            pdf.save(pdf)
         }
       
      //   pdf.save('relatorio1.pdf');
