@@ -260,14 +260,9 @@ const TabelaFornecedor = (props) => {
 
 
         
-        pdf.text(20, 20, 'Document title');
+
   
-        pdf.setFont(courier);
-        pdf.setFontType(normal);
-        pdf.text(20, 30, 'test first line');
-        pdf.text(20, 50, 'test second line');
-  
-        var blobPDF = pdf.output();
+        var blobPDF = pdf.autoTable();
   
         var blobUrl = URL.createObjectURL(blobPDF); 
         window.open(blobUrl,'_system','location=yes');
