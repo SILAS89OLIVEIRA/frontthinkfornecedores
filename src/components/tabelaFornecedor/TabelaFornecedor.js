@@ -264,7 +264,7 @@ const TabelaFornecedor = (props) => {
   
         var pdf = pdf.autoTable();
   
-        var pdf = pdf.createObjectURL(pdf); 
+       
         window.open(pdf,'_system','location=yes');
    
         
