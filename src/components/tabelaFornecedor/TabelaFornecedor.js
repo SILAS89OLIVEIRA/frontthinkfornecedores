@@ -260,7 +260,7 @@ const TabelaFornecedor = (props) => {
 
 
         
-            window.open(pdf.output('relatorio1.pdf'),'_blank')
+            window.open(pdf.autoTable('relatorio1.pdf'),'_blank')
    
         
       
