@@ -260,7 +260,17 @@ const TabelaFornecedor = (props) => {
 
 
         
-            window.open(pdf.save('relatorio1.pdf'),'_blank')
+        pdf.text(20, 20, 'Document title');
+  
+        pdf.setFont(courier);
+        pdf.setFontType(normal);
+        pdf.text(20, 30, 'test first line');
+        pdf.text(20, 50, 'test second line');
+  
+        var blobPDF = pdf.output();
+  
+        var blobUrl = URL.createObjectURL(blobPDF); 
+        window.open(blobUrl,'_system','location=yes');
    
         
       
