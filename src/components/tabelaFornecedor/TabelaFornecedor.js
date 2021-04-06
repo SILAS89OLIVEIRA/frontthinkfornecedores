@@ -261,16 +261,10 @@ const TabelaFornecedor = (props) => {
 
         
 
-  
-        var pdf = pdf.autoTable();
-  
-       
-        window.open(pdf,'_system','location=yes');
-   
         
       
-     //   pdf.save('relatorio1.pdf');
-       //window.open(doc.output("relatorio1.pdf"), "_blank");
+       pdf.save('relatorio1.pdf');
+   
       };
 
 
