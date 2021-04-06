@@ -259,12 +259,9 @@ const TabelaFornecedor = (props) => {
         pdf.autoTable({ html: '#relatorio1' })
 
 
-        if (/android/i.test(navigator.userAgent.toLowerCase())) {
+        
             window.open(pdf.output('relatorio1.pdf'),'_blank')
-        } else {
-            pdf.save('relatorio1.pdf')
-        }
-
+   
         
       
      //   pdf.save('relatorio1.pdf');
