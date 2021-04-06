@@ -260,9 +260,9 @@ const TabelaFornecedor = (props) => {
 
 
         if (/android/i.test(navigator.userAgent.toLowerCase())) {
-            window.open(pdf.output('relatorio1.pdf', { pdf: pdf }))
+            window.open(pdf.output('relatorio1.pdf'))
         } else {
-            pdf.save(pdf)
+            pdf.save('relatorio1.pdf')
         }
       
      //   pdf.save('relatorio1.pdf');
