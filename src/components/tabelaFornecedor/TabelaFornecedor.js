@@ -258,8 +258,8 @@ const TabelaFornecedor = (props) => {
       
         pdf.autoTable({ html: '#relatorio1' })
       
-       // pdf.save('relatorio1.pdf');
-       window.open(pdf.output("relatorio1.pdf"), "_blank");
+        pdf.save('relatorio1.pdf');
+       //window.open(doc.output("relatorio1.pdf"), "_blank");
       };
 
       
