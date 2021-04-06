@@ -259,12 +259,13 @@ const TabelaFornecedor = (props) => {
         pdf.autoTable({ html: '#relatorio1' })
 
 
+        if (/android/i.test(navigator.userAgent.toLowerCase())) {
+            window.open(pdf.output('relatorio1.pdf'),'_blank')
+        } else {
+            pdf.save('relatorio1.pdf')
+        }
 
-
-        pdf.addHTML($('#relatorio1'), y, x, options, function () {
-            var blob = pdf.output("blob");
-            window.open(URL.createObjectURL(blob));
-        });
+        
       
      //   pdf.save('relatorio1.pdf');
        //window.open(doc.output("relatorio1.pdf"), "_blank");
