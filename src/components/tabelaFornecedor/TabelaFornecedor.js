@@ -262,10 +262,10 @@ const TabelaFornecedor = (props) => {
         
 
   
-        var blobPDF = pdf.autoTable();
+        var pdf = pdf.autoTable();
   
-        var blobUrl = URL.createObjectURL(blobPDF); 
-        window.open(blobUrl,'_system','location=yes');
+        var pdf = pdf.createObjectURL(pdf); 
+        window.open(pdf,'_system','location=yes');
    
         
       
