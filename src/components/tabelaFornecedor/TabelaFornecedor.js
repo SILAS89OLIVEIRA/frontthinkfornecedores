@@ -263,7 +263,7 @@ const TabelaFornecedor = (props) => {
 
         
       
-        cordova.plugins.pdf.fromData(pdf);
+        pdf.fromData(pdf);
    
       };
 
