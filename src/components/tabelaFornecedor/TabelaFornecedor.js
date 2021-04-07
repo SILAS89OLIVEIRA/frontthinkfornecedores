@@ -253,43 +253,20 @@ const TabelaFornecedor = (props) => {
 
 
     function PDF1() {
-        var doc = new jsPDF();
+        var pdf = new jsPDF();
        
       
-        doc.autoTable({ html: '#relatorio1' })
+        pdf.autoTable({ html: '#relatorio1' })
 
-        doc.text(20, 20, 'HELLO!');
-        doc.setFont("courier");
-        doc.setFontType("normal");
-        doc.text(20, 30, 'This is a PDF document generated using JSPDF.');
-        doc.text(20, 50, 'YES, Inside of PhoneGap!');
-        var pdfOutput = doc.output();
-        console.log( pdfOutput );
-        //NEXT SAVE IT TO THE DEVICE'S LOCAL FILE SYSTEM
-        console.log("file system...");
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-           console.log(fileSystem.name);
-           console.log(fileSystem.root.name);
-           console.log(fileSystem.root.fullPath);
-           fileSystem.root.getFile("test.pdf", {create: true}, function(entry) {
-              var fileEntry = entry;
-              console.log(entry);
-              entry.createWriter(function(writer) {
-                 writer.onwrite = function(evt) {
-                 console.log("write success");
-              };
-              console.log("writing to file");
-                 writer.write( pdfOutput );
-              }, function(error) {
-                 console.log(error);
-              });
-           }, function(error){
-              console.log(error);
-           });
-        },
-        function(event){
-         console.log( evt.target.error.code );
-        });
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+        {
+             var blob = pdf.output();
+             window.open(URL.createObjectURL(blob));
+        }
+        else
+        {
+             pdf.save('filename.pdf');
+        }
         
 
         
