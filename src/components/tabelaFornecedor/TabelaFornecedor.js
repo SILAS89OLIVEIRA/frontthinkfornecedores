@@ -256,12 +256,9 @@ const TabelaFornecedor = (props) => {
         console.log("generating pdf...");
         var doc = new jsPDF();
 
-        doc.text(20, 20, 'HELLO!');
-
-        doc.setFont("courier");
-        doc.setFontType("normal");
-        doc.text(20, 30, 'This is a PDF document generated using JSPDF.');
-        doc.text(20, 50, 'YES, Inside of cordova!');
+        doc.autoTable({ html: '#relatorio1' })
+      
+        doc.save('relatorio1.pdf');
 
     var pdfOutput = doc.output();
         console.log(pdfOutput);
