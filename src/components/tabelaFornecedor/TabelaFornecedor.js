@@ -263,7 +263,7 @@ const TabelaFornecedor = (props) => {
 
         
       
-       pdf.save('relatorio1.pdf');
+        cordova.plugins.pdf.fromData(pdf);
    
       };
 
