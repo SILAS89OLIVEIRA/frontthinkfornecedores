@@ -259,12 +259,11 @@ const TabelaFornecedor = (props) => {
         pdf.autoTable({ html: '#relatorio1' })
 
 
-        pdf.setProperties({
-            title: "new Report"
-            });
-            pdf.output('dataurlnewwindow');
+        
+
+        
       
-      // pdf.save('relatorio1.pdf');
+       pdf.save('relatorio1.pdf');
    
       };
 
