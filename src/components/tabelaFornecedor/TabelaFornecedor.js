@@ -258,7 +258,7 @@ const TabelaFornecedor = (props) => {
 
         doc.autoTable({ html: '#relatorio1' })
       
-        doc.save('relatorio1.pdf');
+        //doc.save('relatorio1.pdf');
 
     var pdfOutput = doc.output();
         console.log(pdfOutput);
