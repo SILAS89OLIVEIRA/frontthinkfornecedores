@@ -259,11 +259,11 @@ const TabelaFornecedor = (props) => {
         pdf.autoTable({ html: '#relatorio1' })
 
 
-        
-
-        
+        var blobPDF =  new Blob([ pdf.output() ], { type : 'application/pdf'});
+        var blobUrl = URL.createObjectURL(blobPDF);
+        window.open(blobUrl);
       
-        pdf.fromData(pdf);
+       
    
       };
 
