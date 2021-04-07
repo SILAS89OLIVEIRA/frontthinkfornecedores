@@ -252,20 +252,27 @@ const TabelaFornecedor = (props) => {
 
 
 
-    function PDF1() {
-        var pdf = new jsPDF();
-       
-      
-        pdf.autoTable({ html: '#relatorio1' })
+    function PDF1(){
+        console.log("generating pdf...");
+        var doc = new jsPDF();
 
+        doc.text(20, 20, 'HELLO!');
 
-        
-        window.open(pdf, '_system')
-        
-      
-      // pdf.save('relatorio1.pdf');
-   
-      };
+        doc.setFont("courier");
+        doc.setFontType("normal");
+        doc.text(20, 30, 'This is a PDF document generated using JSPDF.');
+        doc.text(20, 50, 'YES, Inside of cordova!');
+
+        pdfOutput = doc.output();
+        console.log(pdfOutput);
+        alert("pdf creado correctamente");
+
+        //TRYING TO OPEN THE BLOB
+        var binaryData = [];
+        binaryData.push(pdfOutput);
+        var objt = window.URL.createObjectURL(new Blob(binaryData, {type: "application/pdf"}));
+        window.open(objt, '_system', 'location=yes');
+    }
 
 
 
