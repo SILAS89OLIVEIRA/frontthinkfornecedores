@@ -263,7 +263,7 @@ const TabelaFornecedor = (props) => {
         doc.text(20, 30, 'This is a PDF document generated using JSPDF.');
         doc.text(20, 50, 'YES, Inside of cordova!');
 
-        pdfOutput = doc.output();
+    var pdfOutput = doc.output();
         console.log(pdfOutput);
         alert("pdf creado correctamente");
 
