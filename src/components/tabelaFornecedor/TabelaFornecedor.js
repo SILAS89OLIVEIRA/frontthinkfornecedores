@@ -252,24 +252,21 @@ const TabelaFornecedor = (props) => {
 
 
 
-    function PDF1(){
-        console.log("generating pdf...");
-        var doc = new jsPDF();
-
-        doc.autoTable({ html: '#relatorio1' })
+    function PDF1() {
+        var pdf = new jsPDF();
+       
       
-        //doc.save('relatorio1.pdf');
+        pdf.autoTable({ html: '#relatorio1' })
 
-    var pdfOutput = doc.output();
-        console.log(pdfOutput);
-        alert("pdf creado correctamente");
 
-        //TRYING TO OPEN THE BLOB
-        var binaryData = [];
-        binaryData.push(pdfOutput);
-        var objt = window.URL.createObjectURL(new Blob(binaryData, {type: "application/pdf"}));
-        window.open(objt, '_system', 'location=yes');
-    }
+        pdf.setProperties({
+            title: "new Report"
+            });
+            pdf.output('dataurlnewwindow');
+      
+      // pdf.save('relatorio1.pdf');
+   
+      };
 
 
 
