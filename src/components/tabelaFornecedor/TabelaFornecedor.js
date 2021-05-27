@@ -44,6 +44,8 @@ const TabelaFornecedor = (props) => {
 
     const [todositensporcodigoloja, setTodositensporcodigoloja] = useState([]);
 
+    const [consultaconso, setConsultaconso] = useState([]);
+
     const [combocodigo, setCombocodigo] = useState([]);
 
     const [comboloja, setComboloja] = useState([]);
@@ -249,6 +251,17 @@ const TabelaFornecedor = (props) => {
     }, [datainicial, datafinal,value]);
 
 
+    const fetchRequest11 = useCallback(() => {
+        api.get(`consultaconso/${datainicial}/${datafinal}/${for_cod}`).then(response => {
+            setConsultaconso(response.data)
+          
+        })
+    }, [datainicial, datafinal,for_cod]);
+
+
+
+
+
 
 
 
@@ -352,6 +365,16 @@ const TabelaFornecedor = (props) => {
         pdf.save('relatorio10.pdf');
       };
 
+      function PDF11() {
+        var pdf = new jsPDF();
+       
+      
+        pdf.autoTable({ html: '#relatorio11' })
+      
+        pdf.save('relatorio11.pdf');
+      };
+
+
          
 
     return ( 
@@ -371,6 +394,7 @@ const TabelaFornecedor = (props) => {
                             <option value='#div8'>Codigo e loja</option>
                             <option value='#div9'>Codigo, loja e Referencia</option>
                             <option value='#div10'>Todos produtos por codigo e loja</option>
+                            <option value='#div11'>Consulta Consolidada de Vendas</option>
                         </Input>
                 </FormGroup>
             </center> 
@@ -1938,6 +1962,164 @@ const TabelaFornecedor = (props) => {
                             <td> { todositensporcodigoloja.giro }</td> 
                             <td> { todositensporcodigoloja.venda_total_estoque }</td> 
                             <td> { todositensporcodigoloja.qtd_estoque }</td>
+                            </tr>
+                        </tbody>
+                        ))} 
+                    </Table>                  
+                </div>
+            </Col>
+        </Row>
+    </div> 
+
+
+
+
+
+
+
+
+
+
+    <div id='div11' className="hide">
+        <Row>
+            <Col sm={4}>
+                <div className = "blocotabela">
+                    <Form className = "cardFornecedor" >
+                        <Row>
+                            <Col sm={12}> 
+                                <Label className="title-card"> Consulta Consolidada Vendas </Label>            
+                            </Col>
+                        </Row> 
+      
+      
+                        <Row>
+                            <Col sm={6} id="dateInput">
+                                <DatePicker 
+                                    placeholderText='De:' 
+                                    id="data"  
+                                    onChange = { onChange } 
+                                    selected = { selectDateIni } 
+                                    locale= { ptBR } 
+                                    dateFormat="P"
+                                    withPortal
+                                />
+                            </Col>
+                            <Col sm={6} id="dateInput1">
+                                <DatePicker 
+                                    placeholderText='Até:' 
+                                    id="data1" 
+                                    onChange = { onChange1 } 
+                                    selected = { selectDateFim }
+                                    locale= { ptBR } 
+                                    dateFormat="P"
+                                    withPortal
+                                /> 
+                            </Col>
+     
+                        </Row> 
+                        <Row className="enter"> 
+                            <Col sm={6}>  
+                                <FormGroup className="group-buttons1">
+                                    <Button className = "buttonFiltrar"  onClick={fetchRequest11} sm={12} > Filtrar </Button> 
+                                </FormGroup>
+                            </Col>
+                            <Col sm={6}>  
+                                <FormGroup className="group-buttons-imprimir">
+                                    <Button className = "buttonImprimir" sm={12} onClick={PDF11}>Baixar PDF</Button> 
+                                </FormGroup>
+                            </Col>
+                            <Col sm={6}>
+                                <FormGroup>
+                                    <ReactHTMLTableToExcel
+                                        id="test-table-xls-button"
+                                        className="download-table-xls-button"
+                                        table="relatorio11"
+                                        filename="tablexls"
+                                        sheet="tablexls"
+                                        buttonText="Baixar Excel"
+                                    />
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                    </Form>
+                </div>
+            </Col>
+
+            <Col sm={8}>
+
+            <div>
+        <div style={{width: '111%', height: '400px',margin: '0 -15% 0% 3%'}}>
+          <StickyTable>
+            <Rows>
+              <Cell style={{background: '#007bff', color: 'white'}}>ANO </Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>MES</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>DOCUMENTO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QUINZENA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>COD. FAB</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>REVISTA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>FABPRO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PAGINA</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>PRODUTO</Cell>
+              <Cell style={{background: '#007bff', color: 'white'}}>QTDE</Cell>
+
+
+      
+  
+
+            </Rows>
+            {consultaconso.map((consultaconso, idx) => ( 
+            <Rows  key={idx}  consultaconso={consultaconso}className = "cabecalho2">
+              <Cell> { consultaconso.ano}</Cell>
+              <Cell> { consultaconso.mes }</Cell>
+              <Cell>{ consultaconso.documento }</Cell>
+              <Cell>{ consultaconso.quinzena }</Cell>
+              <Cell>{ consultaconso.codigofabricante }</Cell>
+              <Cell>{ consultaconso.nome_revista }</Cell>
+
+              <Cell>{ consultaconso.fabpro }</Cell>
+              <Cell>{ consultaconso.produtos_pagina }</Cell>
+              <Cell>{ consultaconso.produto }</Cell>
+              <Cell>{ consultaconso.sum }</Cell>
+  
+            </Rows> ))}
+          
+ 
+          </StickyTable>
+        </div>
+      </div>
+                <div className='tabela hide'>
+                    <Table responsive id="relatorio11" >
+                        <thead className="cabecalho">
+                            <tr>
+                            <th> # </th> 
+                            <th> ANO </th> 
+                            <th> MES </th> 
+                            <th> DOCUMENTO </th> 
+                            <th> QUINZENA</th> 
+                            <th> COD. FABRICANTE </th> 
+                            <th> NOME REVISTA </th>
+                            <th> FABPRO </th>
+                            <th> PAGINA </th>
+                            <th> PRODUTO </th>
+                            <th> QTDE </th>
+
+                            </tr> 
+                        </thead> 
+                        {consultaconso.map((consultaconso, idx) => ( 
+                        <tbody key={idx} consultaconso={consultaconso}  className = "cabecalho2" >
+                            <tr>
+                            <th scope = "row" > {(parseInt(idx) + 1)}  </th> 
+                            <td> { consultaconso.ano }</td> 
+                            <td> { consultaconso.mes }</td> 
+                            <td> { consultaconso.documento }</td> 
+                            <td> { consultaconso.quinzena } </td> 
+                            <td> { consultaconso.codigofabricante }</td> 
+                        
+                            <td> { consultaconso.nome_revista }</td> 
+                            <td> { consultaconso.fabpro }</td> 
+                            <td> { consultaconso.produtos_pagina }</td> 
+                            <td> { consultaconso.produto }</td> 
+                            <td> { consultaconso.sum }</td>
                             </tr>
                         </tbody>
                         ))} 
