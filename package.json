@@ -29,7 +29,7 @@
     "gatsby-plugin-styled-components": "^3.3.10",
     "googleapis": "^66.0.0",
     "http2": "^3.3.7",
-    "jquery": "^3.5.1",
+    "jquery": "^3.6.0",
     "jspdf": "^2.1.1",
     "jspdf-autotable": "^3.5.13",
     "luxon": "^1.24.1",
