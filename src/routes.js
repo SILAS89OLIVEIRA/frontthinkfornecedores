@@ -8,10 +8,11 @@ import checkpromo from "./components/checkpromo/checkpromo";
 import consultaprodutos from "./components/consultaprodutos/consultaprodutos";
 import movimentacao from "./components/movimentacao/movimentacao";
 
+
 export default function Routes (){
     return(
      <BrowserRouter>
- 
+
          <Route path="/" exact component={Login} /> 
          <Route path="/vendaestoque" component={VendaEstoque} /> 
          <Route path="/googledrive" component={GoogleDrive} /> 

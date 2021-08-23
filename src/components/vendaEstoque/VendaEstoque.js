@@ -231,7 +231,7 @@ const VendaEstoque = (props) => {
                 </div>
             </div>
             <div>
-                <TabelaFornecedor />
+            <TabelaFornecedor />
                
 
             </div>

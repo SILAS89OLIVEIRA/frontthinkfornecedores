@@ -1,12 +1,15 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Container, Row, Col, Card, FormGroup } from 'reactstrap';
+import { Card, FormGroup, Label, Input } from 'reactstrap';
 import MenuSuperior from '../menuSuperior/MenuSuperior';
 import api from '../../api'
 import $ from "jquery";
-import { StickyTable, Rows, Cell } from 'react-sticky-table';
+import { StickyTable, Cell, Row } from 'react-sticky-table';
+import { Container, Corpo, Devolu, Pedido, Troca } from './Container';
 
-import { TextField, Select, MenuItem, InputLabel, Button } from "@material-ui/core";
+
+import { TextField, Button } from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
+
 
 
 const CssTextField = withStyles({
@@ -103,23 +106,23 @@ const Movimentacao = (props) => {
 
     {/*Cards */ }
     useEffect(() => {
-        api.get(`totitement/${for_cod}/${hoje().bd}/${hoje().bd}/`).then(response => {
+        api.get(`totitement/${hoje().bd}/${hoje().bd}/${for_cod}/`).then(response => {
             setEntcard(response.data)
             console.log(for_cod, hoje().bd)
         })
     }, [for_cod]);
     useEffect(() => {
-        api.get(`totitempe/${for_cod}/${hoje().bd}/${hoje().bd}/`).then(response => {
+        api.get(`totitempe/${hoje().bd}/${hoje().bd}/${for_cod}/`).then(response => {
             setPedcard(response.data)
         })
     }, [for_cod]);
     useEffect(() => {
-        api.get(`totitemtr/${for_cod}/${hoje().bd}/${hoje().bd}/`).then(response => {
+        api.get(`totitemtr/${hoje().bd}/${hoje().bd}/${for_cod}/`).then(response => {
             setTrocard(response.data)
         })
     }, [for_cod]);
     useEffect(() => {
-        api.get(`totitemdff/${for_cod}/${hoje().bd}/${hoje().bd}/`).then(response => {
+        api.get(`totitemdff/${hoje().bd}/${hoje().bd}/${for_cod}/`).then(response => {
             setDfcard(response.data)
         })
     }, [for_cod]);
@@ -264,14 +267,36 @@ const Movimentacao = (props) => {
         }
     }
 
-    useEffect(() => {
-        $('#selectoption').on('change', function(){
-           var selectValor = $(this).value();
-           console.log(selectValor);
-            $('#pai').children('div').hide();
-            $('#pai').children(selectValor).show();
-        });
-    },);
+    $('#opt').change(function () {
+        var valor = $('#opt').val();
+        $('#pai').children('div').hide();
+        $('#pai').children(valor).show();
+    });
+
+    $('#opt1').change(function () {
+        var valor = $('#opt1').val();
+        $('#pai1').children('div').hide();
+        $('#pai1').children(valor).show();
+    });
+
+    $('#opt2').change(function () {
+        var valor = $('#opt2').val();
+        $('#pai2').children('div').hide();
+        $('#pai2').children(valor).show();
+    });
+
+    $('#opt3').change(function () {
+        var valor = $('#opt3').val();
+        $('#pai3').children('div').hide();
+        $('#pai3').children(valor).show();
+    });
+
+    $('#opt4').change(function () {
+        var valor = $('#opt4').val();
+        $('#pai4').children('div').hide();
+        $('#pai4').children(valor).show();
+    });
+
 
 
 
@@ -287,7 +312,7 @@ const Movimentacao = (props) => {
     }
     function onChange4(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange5(ev) {
         const { name, value } = ev.target;
@@ -295,7 +320,7 @@ const Movimentacao = (props) => {
     }
     function onChange6(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange7(ev) {
         const { name, value } = ev.target;
@@ -303,7 +328,7 @@ const Movimentacao = (props) => {
     }
     function onChange8(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange9(ev) {
         const { name, value } = ev.target;
@@ -311,7 +336,7 @@ const Movimentacao = (props) => {
     }
     function onChange10(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange11(ev) {
         const { name, value } = ev.target;
@@ -319,7 +344,7 @@ const Movimentacao = (props) => {
     }
     function onChange12(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange13(ev) {
         const { name, value } = ev.target;
@@ -327,7 +352,7 @@ const Movimentacao = (props) => {
     }
     function onChange14(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange15(ev) {
         const { name, value } = ev.target;
@@ -335,7 +360,7 @@ const Movimentacao = (props) => {
     }
     function onChange16(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange17(ev) {
         const { name, value } = ev.target;
@@ -343,21 +368,23 @@ const Movimentacao = (props) => {
     }
     function onChange18(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange19(ev) {
         const { name, value } = ev.target;
         setDatafinal(value); console.log(value);
-    } function onChange20(ev) {
+    }
+    function onChange20(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange21(ev) {
         const { name, value } = ev.target;
         setDatafinal(value); console.log(value);
-    } function onChange22(ev) {
+    }
+    function onChange22(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange23(ev) {
         const { name, value } = ev.target;
@@ -365,7 +392,7 @@ const Movimentacao = (props) => {
     }
     function onChange24(ev) {
         const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+        setDatainicial(value); console.log(value);
     }
     function onChange25(ev) {
         const { name, value } = ev.target;
@@ -491,1051 +518,935 @@ const Movimentacao = (props) => {
         <div>
             <MenuSuperior />
             <Container style={{ fontfamily: "Roboto, sans-serif" }}>
-                <Row>
-                    <Col >
-                        {entcard.map(entcard => (
-                            <Card key={entcard} style={{ width: "125%", height: "100%", margin: '30px 0 0 -35%', background: "#20B2AA", color: "#fff", borderRadius: "0%" }}>
-                                <h6 style={{ margin: '10% 0 0 5%', fontSize: "18px" }}>Entradas</h6>
-                                <p style={{ margin: '10% 0 0 5%', fontSize: "14px" }}><spam>Quantidade: {entcard.quantidade}</spam></p>
-                                <p style={{ margin: '5% 0 0 5%', fontSize: "14px" }}><spam>Total: {entcard.totalgeral}</spam></p>
-                            </Card>
-                        ))}
-                    </Col>
-                    <Col>
-                        {pedcard.map(pedcard => (
-                            <Card key={pedcard} style={{ width: "125%", height: "100%", margin: '30px 0 0 -12%', background: "#1E90FF", color: "#fff", borderRadius: "0%" }}>
-                                <h6 style={{ margin: '10% 0 0 5%', fontSize: "18px" }}>Pedidos</h6>
-                                <p style={{ margin: '10% 0 0 5%', fontSize: "14px" }}>Quantidade: {pedcard.quantidade}</p>
-                                <p style={{ margin: '5% 0 0 5%', fontSize: "14px" }}>Total: {pedcard.totalgeral}</p>
-                            </Card>
-                        ))}
-                    </Col>
-                    <Col >
-                        {trocard.map(trocard => (
-                            <Card key={trocard} style={{ width: "125%", height: "100%", margin: '30px 0 0 10%', background: "#32CD32", color: "#fff", borderRadius: "0%" }}>
-                                <h6 style={{ margin: '10% 0 0 5%', fontSize: "18px" }}>Troca</h6>
-                                <p style={{ margin: '10% 0 0 5%', fontSize: "14px" }}>Quantidade: {trocard.quantidade}</p>
-                                <p style={{ margin: '5% 0 0 5%', fontSize: "14px" }}>Total: {trocard.totalgeral}</p>
-                            </Card>
-                        ))}
-                    </Col>
-                    <Col>
-                        {dfcard.map(dfcard => (
-                            <Card key={dfcard} style={{ width: "125%", height: "100%", margin: '30px 0 0 32%', background: "#FFA500", color: "#fff", borderRadius: "0%" }}>
-                                <h6 style={{ margin: '10% 0 0 5%', fontSize: "18px" }}>Devolução</h6>
-                                <p style={{ margin: '10% 0 0 5%', fontSize: "14px" }}>Quantidade: {dfcard.quantidade}</p>
-                                <p style={{ margin: '5% 0 0 5%', fontSize: "14px" }}>Total: {dfcard.totalgeral}</p>
-                            </Card>
-                        ))}
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={4}>
-                        <FormGroup >                            
-                            <Select
-                                labelId="select-label"
-                                Id="selectoption"                                
-                                label="Buscar"
-                                Name="selectoption"
-                                Type="select"
-                                style={{ width: "100%", height: "40%", margin: '60px 0 0 400px' }}
-                            >
-                                <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                <MenuItem value="#entrada">Entradas</MenuItem>
-                                <MenuItem value="#devolucao">Devoluções</MenuItem>
-                                <MenuItem value="#pedidos">Pedidos</MenuItem>
-                                <MenuItem value="#troca">Troca</MenuItem>
-                            </Select>
-                        </FormGroup>
-                    </Col>
-                </Row>
+                {entcard.map(entcard => (
+                    <Card key={entcard} className="Card1">
+                        <h6>Entradas</h6>
+                        <p><spam>Quantidade: {entcard.quantidade}</spam></p>
+                        <p><spam>Total: {entcard.totalgeral}</spam></p>
+                    </Card>
+                ))}
+
+                {pedcard.map(pedcard => (
+                    <Card key={pedcard} className="Card2">
+                        <h6>Pedidos</h6>
+                        <p>Quantidade: {pedcard.quantidade}</p>
+                        <p>Total: {pedcard.totalgeral}</p>
+                    </Card>
+                ))}
+
+                {trocard.map(trocard => (
+                    <Card key={trocard} className="Card3">
+                        <h6>Troca</h6>
+                        <p>Quantidade: {trocard.quantidade}</p>
+                        <p>Total: {trocard.totalgeral}</p>
+                    </Card>
+                ))}
+
+                {dfcard.map(dfcard => (
+                    <Card key={dfcard} className="Card4">
+                        <h6>Devolução</h6>
+                        <p>Quantidade: {dfcard.quantidade}</p>
+                        <p>Total: {dfcard.totalgeral}</p>
+                    </Card>
+                ))}
+
+
+                <FormGroup className="Sele1" >
+                    <Label style={{ color: '#696969' }}>Tipos de Consultas</Label>
+                    <Input name="opt" id="opt" type="select">
+
+                        <option value="#selecione">Selecione Opção</option>
+                        <option value="#entrada">Entradas</option>
+                        <option value="#devolucao">Devoluções</option>
+                        <option value="#pedidos">Pedidos</option>
+                        <option value="#troca">Troca</option>
+                    </Input>
+                </FormGroup>
+            </Container>
+            <Corpo >
                 <div id="pai">
-                    <div id="entrada" className="hide">
-                        <Row>
-                            <Col md={4}>
-                                <FormGroup >                                    
-                                    <Select
-                                        labelId="select-label"
-                                        id="select"
-                                        label="Tipos de consulta"
-                                        style={{ width: "100%", height: "40%", margin: '0 0 0 400px' }}
-                                    >
-                                        <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                        <MenuItem value="1">Todos os Código</MenuItem>
-                                        <MenuItem value="2">Por Código</MenuItem>
-                                        <MenuItem value="3">Por Documento Itens</MenuItem>
-                                    </Select>
-                                </FormGroup>
-                            </Col>
-                        </Row>
+                    <div id="entrada" className="hide div2" >
+
+                        <div>
+                            <Input name="opt1" id="opt1" type="select"
+                                className="Sele2"
+
+                            >
+                                <option selected disabled value="">Selecione Opção</option>
+                                <option value="#entrada1">Todos os Código</option>
+                                <option value="#entrada2">Por Código</option>
+                                <option value="#entrada3">Por Documento Itens</option>
+                            </Input>
+                        </div>
+
                         {/* ENTRADAS */}
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    {/*<CardTitle>Venda Hoje</CardTitle>*/}
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
-                                                <TextField
-                                                    id="standard-data-input"
-                                                    label="De:"
-                                                    type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
-                                                    onChange={onChange2}
-                                                />
-                                            </Col>
-                                            <Col >
-                                                <TextField
-                                                    id="standard-data-input"
-                                                    label="Até:"
-                                                    type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
-                                                    onChange={onChange3}
-                                                />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange1}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                        <div id="pai1" >
+                            <div id="entrada1" className="hide">
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 1 TODOS OS CÓDIGOS*/}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela.map((tabela, idx) => (
-                                    <Rows key={idx} tabela={tabela}>
-                                        <Cell>{tabela.documento}</Cell>
-                                        <Cell>{tabela.data}</Cell>
-                                        <Cell>{tabela.loja_origem}</Cell>
-                                        <Cell>{tabela.codigofab}</Cell>
-                                        <Cell>{tabela.quantidade}</Cell>
-                                        <Cell>{tabela.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
+                                <Card className="Card5" >
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
-                                                <TextField
-                                                    id="standard-data-input"
-                                                    label="De:"
-                                                    type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
-                                                    onChange={onChange4}
-                                                />
-                                            </Col>
-                                            <Col >
-                                                <TextField
-                                                    id="standard-data-input"
-                                                    label="Até:"
-                                                    type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
-                                                    onChange={onChange5}
-                                                />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange27}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao2} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                    <div>
+                                        <TextField
+                                            className="Campo"
+                                            label="De:"
+                                            type="date"
+                                            onChange={onChange2}
+                                        />
+                                        <TextField
+                                            className="Campo"
+                                            label="Até:"
+                                            type="date"
+                                            onChange={onChange3}
+                                        />
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 2 POR CÓDIGO */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>Data</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela2.map((tabela2, idx) => (
-                                    <Rows key={idx} tabela={tabela2}>
-                                        <Cell>{tabela2.documento}</Cell>
-                                        <Cell>{tabela2.data}</Cell>
-                                        <Cell>{tabela2.loja_origem}</Cell>
-                                        <Cell>{tabela2.codigofab}</Cell>
-                                        <Cell>{tabela2.quantidade}</Cell>
-                                        <Cell>{tabela2.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
-                                                <TextField
-                                                    id="standard-data-input"
-                                                    label="De:"
-                                                    type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
-                                                    onChange={onChange6}
-                                                />
-                                            </Col>
-                                            <Col >
-                                                <TextField
-                                                    id="standard-data-input"
-                                                    label="Até:"
-                                                    type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
-                                                    onChange={onChange7}
-                                                />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange28}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao3} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
-
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUATIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela3.map((tabela3, idx) => (
-                                    <Rows key={idx} tabela={tabela3}>
-                                        <Cell>{tabela3.documento}</Cell>
-                                        <Cell>{tabela3.data}</Cell>
-                                        <Cell>{tabela3.loja_origem}</Cell>
-                                        <Cell>{tabela3.codigofab}</Cell>
-                                        <Cell>{tabela3.quantidade}</Cell>
-                                        <Cell>{tabela3.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
-                    </div>
-                    <div id="devolucao" className="hide">
-                        <Row>
-                            <Col md={4}>
-                                <FormGroup >
-                                    <InputLabel id="select-label"></InputLabel>
-                                    <Select
-                                        labelId="select-label"
+                                    </div>
+                                    <Input
+                                        type="select"
+                                        name="select"
                                         id="select"
-                                        label="Acesso a Tabela"
-                                        style={{ width: "100%", height: "40%", margin: '0 0 0 400px' }}
+                                        className="Campo1"
+                                        label="Buscar"
+                                        style={{ width: '93%' }}
+                                        onChange={onChange1}
+                                    >
+                                        <option selected disabled value="">Selecione Opção</option>
+                                        {combocodigo.map(combocodigo => (
+                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                        ))}
+                                    </Input>
+                                    <div>
+                                        <Button onClick={tabelamovimentacao} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                        <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                    </div>
+                                    <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+                                </Card>
+
+                                <div>
+                                    {/*TABELA 1 TODOS OS CÓDIGOS*/}
+                                    <StickyTable className="Tabela1">
+                                        <Row>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                        </Row>
+                                        {tabela.map((tabela, idx) => (
+                                            <Row key={idx} tabela={tabela}>
+                                                <Cell>{tabela.documento}</Cell>
+                                                <Cell>{tabela.data}</Cell>
+                                                <Cell>{tabela.loja_origem}</Cell>
+                                                <Cell>{tabela.codigofab}</Cell>
+                                                <Cell>{tabela.quantidade}</Cell>
+                                                <Cell>{tabela.totalgeral}</Cell>
+                                            </Row>
+                                        ))}
+                                    </StickyTable>
+                                </div>
+
+                            </div>
+
+
+                            <div id="entrada2" className="hide">
+                                <Card className="Card6" >
+                                    <div>
+                                        <TextField
+                                            className="Campo"
+                                            id="standard-data-input"
+                                            label="De:"
+                                            type="data"
+                                            onChange={onChange4}
+                                        />
+
+                                        <TextField
+                                            className="Campo"
+                                            id="standard-data-input"
+                                            label="Até:"
+                                            type="data"
+                                            onChange={onChange5}
+                                        />
+                                    </div>
+
+                                    <Input
+                                        type="select"
+                                        name="select"
+                                        id="select"
+                                        className="Campo1"
+                                        label="Buscar"
+                                        style={{ width: '93%' }}
+                                        onChange={onChange27}
+                                    >
+                                        <option selected disabled value="">Selecione Opção</option>
+                                        {combocodigo.map(combocodigo => (
+                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                        ))}
+                                    </Input>
+
+                                    <div>
+                                        <Button onClick={tabelamovimentacao2} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                        <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                    </div>
+                                    <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+
+                                </Card>
+                                <div>
+                                    {/*TABELA 2 POR CÓDIGO */}
+                                    <StickyTable className="Tabela2">
+                                        <Row>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                        </Row>
+                                        {tabela2.map((tabela2, idx) => (
+                                            <Row key={idx} tabela={tabela2}>
+                                                <Cell>{tabela2.documento}</Cell>
+                                                <Cell>{tabela2.data}</Cell>
+                                                <Cell>{tabela2.loja_origem}</Cell>
+                                                <Cell>{tabela2.codigofab}</Cell>
+                                                <Cell>{tabela2.quantidade}</Cell>
+                                                <Cell>{tabela2.totalgeral}</Cell>
+                                            </Row>
+                                        ))}
+                                    </StickyTable>
+                                </div>
+                            </div>
+                            <div id="entrada3" className="hide">
+
+                                <Card className="Card7" >
+                                    <div>
+                                        <TextField
+                                            className="Campo"
+                                            label="De:"
+                                            type="data"
+                                            onChange={onChange6}
+                                        />
+
+                                        <TextField
+                                            className="Campo"
+                                            id="standard-data-input"
+                                            label="Até:"
+                                            type="data"
+                                            onChange={onChange7}
+                                        />
+
+                                    </div>
+                                    <TextField
+                                        className="Campo1"
+                                        id="standard-data-input"
+                                        label="Documento"
+                                        type="text"
+                                        onChange={onChange28}
+                                    >
+                                    </TextField>
+
+
+                                    <div>
+                                        <Button onClick={tabelamovimentacao3} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                        <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                    </div>
+                                    <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+
+
+                                </Card>
+                                <div>
+                                    {/*TABELA 3 POR DOCUMENTOS ITENS */}
+                                    <StickyTable className="Tabela3">
+                                        <Row>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>QUATIDADE</Cell>
+                                            <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                        </Row>
+                                        {tabela3.map((tabela3, idx) => (
+                                            <Row key={idx} tabela={tabela3}>
+                                                <Cell>{tabela3.documento}</Cell>
+                                                <Cell>{tabela3.data}</Cell>
+                                                <Cell>{tabela3.loja_origem}</Cell>
+                                                <Cell>{tabela3.codigofab}</Cell>
+                                                <Cell>{tabela3.quantidade}</Cell>
+                                                <Cell>{tabela3.totalgeral}</Cell>
+                                            </Row>
+                                        ))}
+                                    </StickyTable>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="devolucao" className="hide">
+
+                        <Devolu>
+                            <div className="div3">
+
+                                <div>
+                                    <Input name="opt2" id="opt2" type="select"
+                                        className="Sele2"
                                         onChange={onChange29}
                                     >
-                                        <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                        <MenuItem value="1">Todos os Código</MenuItem>
-                                        <MenuItem value="2">Por Código</MenuItem>
-                                        <MenuItem value="3">Por Documento Itens</MenuItem>
-                                    </Select>
-                                </FormGroup>
-                            </Col>
-                        </Row>
-                        {/* DEVOLUÇÕES */}
+                                        <option selected disabled value="">Selecione Opção</option>
+                                        <option value="#devolucao1">Todos os Código</option>
+                                        <option value="#devolucao2">Por Código</option>
+                                        <option value="#devolucao3">Por Documento Itens</option>
+                                    </Input>
+                                </div>
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                {/* DEVOLUÇÕES */}
+                                <div id="pai2" >
+                                    <div id="devolucao1" className="hide">
+
+                                        <Card className="Card8">
+                                            <div>
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange8}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange9}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange29}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao4} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 1 TODOS OS CÓDIGOS*/}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela4.map((tabela4, idx) => (
-                                    <Rows key={idx} tabela={tabela4}>
-                                        <Cell>{tabela4.documento}</Cell>
-                                        <Cell>{tabela4.data}</Cell>
-                                        <Cell>{tabela4.loja_origem}</Cell>
-                                        <Cell>{tabela4.codigofab}</Cell>
-                                        <Cell>{tabela4.quantidade}</Cell>
-                                        <Cell>{tabela4.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
+                                            </div>
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                            <Input
+                                                type="select"
+                                                name="select"
+                                                id="select"
+                                                className="Campo1"
+                                                label="Buscar"
+                                                style={{ width: '93%' }}
+
+                                                onChange={onChange29}
+                                            >
+                                                <option selected disabled value="">Selecione Opção</option>
+                                                {combocodigo.map(combocodigo => (
+                                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                                ))}
+                                            </Input>
+
+                                            <div>
+                                                <Button onClick={tabelamovimentacao4} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+                                        </Card>
+                                        <div>
+                                            {/*TABELA 1 TODOS OS CÓDIGOS*/}
+                                            <StickyTable className="Tabela1" >
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela4.map((tabela4, idx) => (
+                                                    <Row key={idx} tabela={tabela4}>
+                                                        <Cell>{tabela4.documento}</Cell>
+                                                        <Cell>{tabela4.data}</Cell>
+                                                        <Cell>{tabela4.loja_origem}</Cell>
+                                                        <Cell>{tabela4.codigofab}</Cell>
+                                                        <Cell>{tabela4.quantidade}</Cell>
+                                                        <Cell>{tabela4.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                    <div id="devolucao2" className="hide">
+
+                                        <Card className="Card9">
+                                            <div>
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
+
                                                     onChange={onChange10}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
+
                                                     onChange={onChange11}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange30}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao5} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 2 POR CÓDIGO */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                            <Input
+                                                type="select"
+                                                name="select"
+                                                id="select"
+                                                className="Campo1"
+                                                label="Buscar"
+                                                style={{ width: '93%' }}
+                                                onChange={onChange30}
+                                            >
+                                                <option selected disabled value="">Selecione Opção</option>
+                                                {combocodigo.map(combocodigo => (
+                                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                                ))}
+                                            </Input>
 
-                                </Rows>
-                                {tabela5.map((tabela5, idx) => (
-                                    <Rows key={idx} tabela={tabela5}>
-                                        <Cell>{tabela5.documento}</Cell>
-                                        <Cell>{tabela5.data}</Cell>
-                                        <Cell>{tabela5.loja_origem}</Cell>
-                                        <Cell>{tabela5.codigofab}</Cell>
-                                        <Cell>{tabela5.quantidade}</Cell>
-                                        <Cell>{tabela5.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+
+                                            <div>
+                                                <Button onClick={tabelamovimentacao5} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+                                        </Card>
+                                        <div>
+                                            {/*TABELA 2 POR CÓDIGO */}
+                                            <StickyTable className="Tabela2">
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+
+                                                </Row>
+                                                {tabela5.map((tabela5, idx) => (
+                                                    <Row key={idx} tabela={tabela5}>
+                                                        <Cell>{tabela5.documento}</Cell>
+                                                        <Cell>{tabela5.data}</Cell>
+                                                        <Cell>{tabela5.loja_origem}</Cell>
+                                                        <Cell>{tabela5.codigofab}</Cell>
+                                                        <Cell>{tabela5.quantidade}</Cell>
+                                                        <Cell>{tabela5.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                    <div id="devolucao3" className="hide">
+
+                                        <Card className="Card10">
+                                            <div>
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange12}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange13}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange31}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao6} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
+                                            <TextField
+                                                className="Campo1"
+                                                id="select"
+                                                label="Documento"
+                                                onChange={onChange31}
+                                            >
+                                            </TextField>
+                                            <div>
+                                                <Button onClick={tabelamovimentacao6} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela6.map((tabela6, idx) => (
-                                    <Rows key={idx} tabela={tabela6}>
-                                        <Cell>{tabela6.documento}</Cell>
-                                        <Cell>{tabela6.data}</Cell>
-                                        <Cell>{tabela6.loja_origem}</Cell>
-                                        <Cell>{tabela6.codigofab}</Cell>
-                                        <Cell>{tabela6.quantidade}</Cell>
-                                        <Cell>{tabela6.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
+
+                                        </Card>
+                                        <div>
+                                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
+                                            <StickyTable className="Tabela3" >
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela6.map((tabela6, idx) => (
+                                                    <Row key={idx} tabela={tabela6}>
+                                                        <Cell>{tabela6.documento}</Cell>
+                                                        <Cell>{tabela6.data}</Cell>
+                                                        <Cell>{tabela6.loja_origem}</Cell>
+                                                        <Cell>{tabela6.codigofab}</Cell>
+                                                        <Cell>{tabela6.quantidade}</Cell>
+                                                        <Cell>{tabela6.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Devolu>
                     </div>
+
+
+
                     <div id="pedidos" className="hide">
-                        <Row>
-                            <Col md={4}>
-                                <FormGroup >
-                                    <InputLabel id="select-label"></InputLabel>
-                                    <Select
-                                        labelId="select-label"
-                                        id="select"
-                                        label="Acesso a Tabela"
-                                        style={{ width: "100%", height: "40%", margin: '0 0 0 400px' }}
+                        <Pedido>
+                            <div className="div4">
+
+                                <div>
+                                    <Input name="opt3" id="opt3" type="select"
+                                        className="Sele2"
+
                                     >
-                                        <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                        <MenuItem value="1">Todos os Código</MenuItem>
-                                        <MenuItem value="2">Por Código</MenuItem>
-                                        <MenuItem value="3">Por Documento Itens</MenuItem>
-                                    </Select>
-                                </FormGroup>
-                            </Col>
-                        </Row>
+                                        <option selected disabled value="">Selecione Opção</option>
+                                        <option value="#pedidos1">Todos os Código</option>
+                                        <option value="#pedidos2">Por Código</option>
+                                        <option value="#pedidos3">Por Documento Itens</option>
+                                    </Input>
+                                </div>
 
-                        {/* PEDIDOS */}
+                                {/* PEDIDOS */}
+                                <div id="pai3" >
+                                    <div id="pedidos1" className="hide">
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                        <Card className="Card11">
+
+                                            <div>
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange14}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange15}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange32}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao7} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 1 TODOS OS CÓDIGOS*/}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela7.map((tabela7, idx) => (
-                                    <Rows key={idx} tabela={tabela7}>
-                                        <Cell>{tabela7.documento}</Cell>
-                                        <Cell>{tabela7.data}</Cell>
-                                        <Cell>{tabela7.loja_origem}</Cell>
-                                        <Cell>{tabela7.codigofab}</Cell>
-                                        <Cell>{tabela7.quantidade}</Cell>
-                                        <Cell>{tabela7.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
+                                            <Input
+                                                type="select"
+                                                name="select"
+                                                id="select"
+                                                className="Campo1"
+                                                label="Buscar"
+                                                style={{ width: '93%' }}
+                                                onChange={onChange32}
+                                            >
+                                                <option selected disabled value="">Selecione Opção</option>
+                                                {combocodigo.map(combocodigo => (
+                                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                                ))}
+                                            </Input>
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                            <div>
+                                                <Button onClick={tabelamovimentacao7} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+                                        </Card>
+
+                                        <div>
+                                            <StickyTable className="Tabela1">
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela7.map((tabela7, idx) => (
+                                                    <Row key={idx} tabela={tabela7}>
+                                                        <Cell>{tabela7.documento}</Cell>
+                                                        <Cell>{tabela7.data}</Cell>
+                                                        <Cell>{tabela7.loja_origem}</Cell>
+                                                        <Cell>{tabela7.codigofab}</Cell>
+                                                        <Cell>{tabela7.quantidade}</Cell>
+                                                        <Cell>{tabela7.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                    <div id="pedidos2" className="hide">
+
+
+                                        <Card className="Card12">
+                                            <div>
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange16}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange17}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange33}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao8} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 2 POR CÓDIGO */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela8.map((tabela8, idx) => (
-                                    <Rows key={idx} tabela={tabela8}>
-                                        <Cell>{tabela8.documento}</Cell>
-                                        <Cell>{tabela8.data}</Cell>
-                                        <Cell>{tabela8.loja_origem}</Cell>
-                                        <Cell>{tabela8.codigofab}</Cell>
-                                        <Cell>{tabela8.quantidade}</Cell>
-                                        <Cell>{tabela8.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                            </div>
+
+
+                                            <Input
+                                                type="select"
+                                                name="select"
+                                                id="select"
+                                                className="Campo1"
+                                                label="Buscar"
+                                                style={{ width: '93%' }}
+                                                onChange={onChange33}
+                                            >
+                                                <option selected disabled value="">Selecione Opção</option>
+                                                {combocodigo.map(combocodigo => (
+                                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                                ))}
+                                            </Input>
+
+
+                                            <div>
+                                                <Button onClick={tabelamovimentacao8} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+
+
+                                        </Card>
+                                        <div>
+                                            {/*TABELA 2 POR CÓDIGO */}
+                                            <StickyTable className="Tabela2" >
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela8.map((tabela8, idx) => (
+                                                    <Row key={idx} tabela={tabela8}>
+                                                        <Cell>{tabela8.documento}</Cell>
+                                                        <Cell>{tabela8.data}</Cell>
+                                                        <Cell>{tabela8.loja_origem}</Cell>
+                                                        <Cell>{tabela8.codigofab}</Cell>
+                                                        <Cell>{tabela8.quantidade}</Cell>
+                                                        <Cell>{tabela8.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                    <div id="pedidos3" className="hide">
+                                        <Card className="Card13">
+
+                                            <div>
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
+
                                                     onChange={onChange18}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange19}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange34}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao9} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela9.map((tabela9, idx) => (
-                                    <Rows key={idx} tabela={tabela9}>
-                                        <Cell>{tabela9.documento}</Cell>
-                                        <Cell>{tabela9.data}</Cell>
-                                        <Cell>{tabela9.loja_origem}</Cell>
-                                        <Cell>{tabela9.codigofab}</Cell>
-                                        <Cell>{tabela9.quantidade}</Cell>
-                                        <Cell>{tabela9.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
+                                            <TextField
+                                                className="Campo1"
+                                                id="select"
+                                                label="Documento"
+                                                onChange={onChange34}
+                                            >
+                                            </TextField>
+
+
+                                            <div>
+                                                <Button onClick={tabelamovimentacao9} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+                                        </Card>
+
+                                        <div>
+                                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
+                                            <StickyTable className="Tabela3">
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela9.map((tabela9, idx) => (
+                                                    <Row key={idx} tabela={tabela9}>
+                                                        <Cell>{tabela9.documento}</Cell>
+                                                        <Cell>{tabela9.data}</Cell>
+                                                        <Cell>{tabela9.loja_origem}</Cell>
+                                                        <Cell>{tabela9.codigofab}</Cell>
+                                                        <Cell>{tabela9.quantidade}</Cell>
+                                                        <Cell>{tabela9.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Pedido>
                     </div>
                     <div id="troca" className="hide">
-                        <Row>
-                            <Col md={4}>
-                                <FormGroup >
-                                    <InputLabel id="select-label"></InputLabel>
-                                    <Select
-                                        labelId="select-label"
-                                        id="select"
-                                        label="Acesso a Tabela"
-                                        style={{ width: "100%", height: "40%", margin: '0 0 0 400px' }}
+                        <Troca>
+                            <div className="div5">
+                                <div>
+                                    <Input name="opt4" id="opt4" type="select"
+                                        className="Sele2"
                                     >
-                                        <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                        <MenuItem value="1">Todos os Código</MenuItem>
-                                        <MenuItem value="2">Por Código</MenuItem>
-                                        <MenuItem value="3">Por Documento Itens</MenuItem>
-                                    </Select>
-                                </FormGroup>
-                            </Col>
-                        </Row>
+                                        <option selected disabled value="">Selecione Opção</option>
+                                        <option value="#troca1">Todos os Código</option>
+                                        <option value="#troca2">Por Código</option>
+                                        <option value="#troca3">Por Documento Itens</option>
+                                    </Input>
+                                </div>
 
-                        {/* TROCA */}
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                {/* TROCA */}
+                                <div id="pai4">
+                                    <div id="troca1" className="hide">
+
+                                        <Card className="Card14">
+                                            <div>
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange20}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange21}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange35}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao10} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 1 TODOS OS CÓDIGOS*/}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela10.map((tabela10, idx) => (
-                                    <Rows key={idx} tabela={tabela10}>
-                                        <Cell>{tabela10.documento}</Cell>
-                                        <Cell>{tabela10.data}</Cell>
-                                        <Cell>{tabela10.loja_origem}</Cell>
-                                        <Cell>{tabela10.codigofab}</Cell>
-                                        <Cell>{tabela10.quantidade}</Cell>
-                                        <Cell>{tabela10.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
 
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                            <Input
+                                                type="select"
+                                                name="select"
+                                                id="select"
+                                                className="Campo1"
+                                                label="Buscar"
+                                                style={{ width: '93%' }}
+                                                onChange={onChange35}
+                                            >
+                                                <option selected disabled value="">Selecione Opção</option>
+                                                {combocodigo.map(combocodigo => (
+                                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                                ))}
+                                            </Input>
+
+
+                                            <div>
+                                                <Button onClick={tabelamovimentacao10} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+
+
+                                        </Card>
+                                        <div>
+                                            {/*TABELA 1 TODOS OS CÓDIGOS*/}
+                                            <StickyTable className="Tabela1" >
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela10.map((tabela10, idx) => (
+                                                    <Row key={idx} tabela={tabela10}>
+                                                        <Cell>{tabela10.documento}</Cell>
+                                                        <Cell>{tabela10.data}</Cell>
+                                                        <Cell>{tabela10.loja_origem}</Cell>
+                                                        <Cell>{tabela10.codigofab}</Cell>
+                                                        <Cell>{tabela10.quantidade}</Cell>
+                                                        <Cell>{tabela10.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                    <div id="troca2" className="hide">
+
+                                        <Card className="Card15">
+                                            <div>
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange22}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange23}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange36}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao11} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 2 POR CÓDIGO */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA.</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela11.map((tabela11, idx) => (
-                                    <Rows key={idx} tabela={tabela11}>
-                                        <Cell>{tabela11.documento}</Cell>
-                                        <Cell>{tabela11.data}</Cell>
-                                        <Cell>{tabela11.loja_origem}</Cell>
-                                        <Cell>{tabela11.codigofab}</Cell>
-                                        <Cell>{tabela11.quantidade}</Cell>
-                                        <Cell>{tabela11.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
-                        <Row>
-                            <Col sm={12} md={4} lg={4} xl={4} >
-                                <Card style={{ width: "100%", height: "80%", margin: '15% 0 0 -100px' }}>
-                                    <FormGroup>
-                                        <Row>
-                                            <Col>
+                                            <Input
+                                                type="select"
+                                                name="select"
+                                                id="select"
+                                                className="Campo1"
+                                                label="Buscar"
+                                                style={{ width: '93%' }}
+                                                onChange={onChange36}
+                                            >
+                                                <option selected disabled value="">Selecione Opção</option>
+                                                {combocodigo.map(combocodigo => (
+                                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                                ))}
+                                            </Input>
+
+
+                                            <div>
+                                                <Button onClick={tabelamovimentacao11} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
+
+
+
+                                        </Card>
+
+                                        <div>
+                                            {/*TABELA 2 POR CÓDIGO */}
+                                            <StickyTable className="Tabela2">
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA.</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela11.map((tabela11, idx) => (
+                                                    <Row key={idx} tabela={tabela11}>
+                                                        <Cell>{tabela11.documento}</Cell>
+                                                        <Cell>{tabela11.data}</Cell>
+                                                        <Cell>{tabela11.loja_origem}</Cell>
+                                                        <Cell>{tabela11.codigofab}</Cell>
+                                                        <Cell>{tabela11.quantidade}</Cell>
+                                                        <Cell>{tabela11.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                    <div id="troca3" className="hide">
+
+                                        <Card className="Card16">
+                                            <div>
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="De:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange24}
                                                 />
-                                            </Col>
-                                            <Col >
+
                                                 <TextField
-                                                    id="standard-data-input"
+                                                    className="Campo"
                                                     label="Até:"
                                                     type="data"
-                                                    style={{ margin: '0 0 0 15%', width: "100%" }}
                                                     onChange={onChange25}
                                                 />
-                                            </Col>
-                                        </Row>
-                                    </FormGroup>
-                                    <FormGroup >
-                                        <InputLabel id="select-label"></InputLabel>
-                                        <Select
-                                            labelId="select-label"
-                                            id="select"
-                                            label="Buscar"
-                                            style={{ width: "90%", height: "100%", margin: '0 0 0 5%' }}
-                                            onChange={onChange37}
-                                        >
-                                            <MenuItem selected disabled value="">Selecione Opção</MenuItem>
-                                            {combocodigo.map(combocodigo => (
-                                                <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormGroup>
-                                    <Row>
-                                        <Col sm={12}>
-                                            <FormGroup>
-                                                <Button onClick={tabelamovimentacao12} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar PDF</Button>{' '}
-                                                <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Baixar Excel</Button>{' '}
+                                            </div>
+                                            <TextField
+                                                className="Campo1"
+                                                id="select"
+                                                label="Documento"
+                                                onChange={onChange37}
+                                            >
+                                            </TextField>
+                                            <div>
+                                                <Button onClick={tabelamovimentacao12} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Filtrar</Button>{' '}
+                                                <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao">Baixar PDF</Button>{' '}
+                                            </div>
+                                            <Button style={{ background: "#007bff", color: "#fff", fontSize: "13px" }} className="Botao1">Baixar Excel</Button>{' '}
 
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
-                            <StickyTable style={{ width: '200%', height: '400px', margin: '-21% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
-                                </Rows>
-                                {tabela12.map((tabela12, idx) => (
-                                    <Rows key={idx} tabela={tabela12}>
-                                        <Cell>{tabela12.documento}</Cell>
-                                        <Cell>{tabela12.data}</Cell>
-                                        <Cell>{tabela12.loja_origem}</Cell>
-                                        <Cell>{tabela12.codigofab}</Cell>
-                                        <Cell>{tabela12.quantidade}</Cell>
-                                        <Cell>{tabela12.totalgeral}</Cell>
-                                    </Rows>
-                                ))}
-                            </StickyTable>
-                        </Row>
+                                        </Card>
+
+                                        <div>
+                                            {/*TABELA 3 POR DOCUMENTOS ITENS */}
+                                            <StickyTable className="Tabela3" >
+                                                <Row>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DOCUMENTO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>DATA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>QUANTIDADE</Cell>
+                                                    <Cell style={{ background: '#007bff', color: 'white' }}>TOTAL GERAL</Cell>
+                                                </Row>
+                                                {tabela12.map((tabela12, idx) => (
+                                                    <Row key={idx} tabela={tabela12}>
+                                                        <Cell>{tabela12.documento}</Cell>
+                                                        <Cell>{tabela12.data}</Cell>
+                                                        <Cell>{tabela12.loja_origem}</Cell>
+                                                        <Cell>{tabela12.codigofab}</Cell>
+                                                        <Cell>{tabela12.quantidade}</Cell>
+                                                        <Cell>{tabela12.totalgeral}</Cell>
+                                                    </Row>
+                                                ))}
+                                            </StickyTable>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Troca>
                     </div>
+
                 </div>
-            </Container>
-        </div>
+                <div id='selecione' className="hide">
+                </div>
+            </Corpo>
+        </div >
     );
 }
 export default Movimentacao;

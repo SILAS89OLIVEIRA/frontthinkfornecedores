@@ -1,11 +1,14 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { Form, FormGroup, Row, Col, Container, Card, Input } from 'reactstrap';
-import { InputLabel, Select, MenuItem, FormControl } from "@material-ui/core";
 import MenuSuperior from "../menuSuperior/MenuSuperior";
+import { Container } from './Container';
 import api from '../../api'
-import { StickyTable, Rows, Cell } from 'react-sticky-table';
-import { TextField, Button } from "@material-ui/core";
+import $ from "jquery";
+import { Form, Input, Label, FormGroup } from 'reactstrap';
+import { Select, MenuItem, Card, TextField, Button} from "@material-ui/core";
+import { StickyTable, Row, Cell } from 'react-sticky-table';
 import { withStyles } from '@material-ui/core/styles';
+
+
 
 const CssTextField = withStyles({
     root: {
@@ -38,32 +41,28 @@ const CssTextField = withStyles({
 
 
 const Checkpromo = (props) => {
-    const [combocodigo, setCombocodigo] = useState([]);
-    const for_cod = localStorage.getItem('for_cod');
-    
 
-    const [tabela, setTabela] = useState([]);
-    console.log(tabela);
-    const [tabelacheck, setTabelacheck] = useState(null);
-    const [isActive2, setIsActive2] = useState(null);
+   const [tabela, setTabela] = useState([]);
 
-    const [combocodigosele, setCombocodigosele] = useState([]);
-    const [isActive, setIsActive] = useState(false);
+   const [codigosele, setCodigosele] = useState(null);
+   const [isActive1, setIsActive1] = useState (null);
 
-    function onChange2(ev) {
-        const { name, value } = ev.target;
-        setCombocodigosele(value);
-        if (ev !== '') {
-            setIsActive(true);
-        } else {
-            setIsActive(false);
-        }
+   function onChange2(ev) {
+       const{name, value} = ev.target;
+       setCodigosele(value);
+       if (ev !== '') {
+        setIsActive1(true);
+    } else {
+        setIsActive1(false);
     }
+   }
+   
+
     const [revista, setRevista] = useState(null);
-    const [isActive4, setIsActive4] = useState(false); 
+    const [isActive4, setIsActive4] = useState(false);
 
     function onChange4(ev) {
-        const {name, value} = ev.target;
+        const { name, value } = ev.target;
         setRevista(value); console.log(value);
         if (ev !== '') {
             setIsActive4(true);
@@ -71,6 +70,9 @@ const Checkpromo = (props) => {
             setIsActive4(false);
         }
     }
+
+    const [tabelacheck, setTabelacheck] = useState(null);
+    const [isActive2, setIsActive2] = useState(null);
 
     function onChange1(ev) {
         const { name, value } = ev.target;
@@ -83,94 +85,102 @@ const Checkpromo = (props) => {
         }
     }
 
+    const [combocodigo, setCombocodigo] = useState([]);
+    const for_cod = localStorage.getItem('for_cod');
+
     useEffect(() => {
         api.get(`combocodigo/${for_cod}/`).then(response => {
             setCombocodigo(response.data)
         })
     }, [for_cod]);
     const tabelacheckpro = useCallback(() => {
-        api.get(`checkpro/${combocodigosele}/`).then(response => {
+        api.get(`checkpro/${codigosele}/`).then(response => {
             setTabela(response.data)
+            localStorage.setItem('codigofiltrado', codigosele)
 
         })
-    }, [combocodigosele]);
+    }, [codigosele]);
 
+    const codigofiltrado = localStorage.getItem('codigofiltrado')
+
+    const enviarcheckemail = useCallback(() => {
+        api.get(`checkproinsertemail/${codigofiltrado}/`).then(response => {
+
+
+        })
+    }, []);
+
+    const [ch, setCh] = useState(null);
+
+    function onChange3(ev) {
+        const { name, value } = ev.target;
+        var checkeds = new Array();
+        $("input[name='checks[]']:checked").each(function () {
+            checkeds.push($(this).val());
+            setCh(checkeds)
+
+        });
+    }
+
+    const enviarcheck = () => {
+        for (var checkenviar of ch) {
+            api.post(`checkproinsert/${checkenviar}/`).then(response => {
+                console.log(checkenviar);
+            })
+
+        }
+    }
 
 
     return (
         <div>
             <MenuSuperior />
-            <center><h1 style={{ marginBottom: '1%', fontFamily: "Roboto, sans-serif", color: '#A9A9A9' }}>Produtos de Promoção</h1></center>
-            <Container className="container-theme" fluid={true}>
-                <Row>
-                    <Col md={8}>
-
-                        <Card style={{ width: "40%", height: "100%", boxshadow: '#848484', margin: '0 0 0 0' }}>
-                            <Form id="altura">
-                                <Row>
-                                    <Col >
-                                    
-                                        <FormGroup >
-                                        <FormControl>
-                                            <InputLabel id="select-label"></InputLabel>
-                                            <Select
-                                                labelId="select-label"
-                                                id="select"
-                                                onChange={onChange2}
-                                                style={{ width: "100%", margin: '0 0 0 5%' }}
-
-                                            >
-                                                <MenuItem selected disable value="">SELECIONE OPÇÃO</MenuItem>
-                                                {combocodigo.map(combocodigo => (
-                                                    <MenuItem key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </MenuItem>
-                                                ))}
-                                            </Select>
-                                            </FormControl>
-                                        </FormGroup>
-                                       
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col >
-                                        <FormGroup>
-                                            <Button onClick={tabelacheckpro} style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "40%", height: "10%", margin: '5% 0 0 5%', fontSize: "13px" }}>Filtrar</Button>{' '}
-                                        </FormGroup>
-                                    </Col>
-                                </Row>
-                            </Form>
-                        </Card>
-
-                    </Col>
-                   <Row>
-                    <Col>
-                        <Form >
-                            <StickyTable style={{ width: '200%', height: '100%', margin: '-11% 0 0 30%' }}>
-                                <Rows>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}></Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>NOME</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>DESCRIÇÃO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>N°. PRODUTO</Cell>
-                                    <Cell style={{ background: '#007bff', color: 'white' }}>PREÇO</Cell>
-                                </Rows>
-                                {tabela.map((tabela, idx) => (
-                                    <Rows key={idx} tabela={tabela}>
-                                        <Cell><Input addon type="checkbox"></Input></Cell>
-                                        <Cell>{tabela.for_nom}</Cell>
-                                        <Cell>{tabela.for_cod}</Cell>
-                                        <Cell>{tabela.produtos_descricao}</Cell>
-                                        <Cell>{tabela.produtos_numero}</Cell>
-                                        <Cell>{tabela.produtos_preco}</Cell>
-                                    </Rows>
+            <Container>
+                <Card className="Card">
+                <FormGroup className="Sele" >
+                        <Input type="select" name="select" id="select" onChange={onChange2} >
+                                <option disable value="" >SELECIONE OPÇÃO </option>
+                                
+                               
+                                {combocodigo.map(combocodigo => (
+                                    <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom} </option>
                                 ))}
-                            </StickyTable>
-                        </Form>
-                    </Col>
-                    </Row>   
-                     <Button style={{ background: "#007bff", color: "#fff", borderRadius: "0%", width: "10%", height: "15%", margin: '0 0 0 30%', fontSize: "13px" }}>Enviar</Button>{' '}
-                </Row>
-            </Container>
-        </div>
+                           </Input>
+                </FormGroup>
+                    <Button className="botao1" onClick={tabelacheckpro} style={{ background: "#007bff", color: "#fff", fontSize: "13px" }}>Filtrar</Button>{' '}
+                </Card>
+
+                <StickyTable style={{ width: '105%', height: '400px', margin: '0 -15% 0% -1%', padding: '0 0 -15% 0' }}>
+                    <Row>
+                        <Cell style={{ background: '#007bff', color: 'white' }}></Cell>
+                        <Cell style={{ background: '#007bff', color: 'white' }}>NOME</Cell>
+                        <Cell style={{ background: '#007bff', color: 'white' }}>CÓDIGO</Cell>
+                        <Cell style={{ background: '#007bff', color: 'white' }}>DESCRIÇÃO</Cell>
+                        <Cell style={{ background: '#007bff', color: 'white' }}>N°. PRODUTO</Cell>
+                        <Cell style={{ background: '#007bff', color: 'white' }}>PREÇO</Cell>
+                    </Row>
+                    {tabela.map((tabela, idx) => (
+                        <Row key={idx} tabela={tabela}>
+                            <Cell><Input addon type="checkbox" onChange={onChange3} name="checks[]" value={tabela.produtos_id}></Input></Cell>
+                            <Cell>{tabela.for_nom}</Cell>
+                            <Cell>{tabela.for_cod}</Cell>
+                            <Cell>{tabela.produtos_descricao}</Cell>
+                            <Cell>{tabela.produtos_numero}</Cell>
+                            <Cell>{tabela.produtos_preco}</Cell>
+                        </Row>
+                    ))}
+                </StickyTable>
+                <Form className="botao3">
+                    <div className="check">
+                        <Label style={{ color: '#696969' }}>Salvar</Label>
+                        <Input onClick={enviarcheck} type="checkbox" style={{ borderColor: '#696969', borderRadius: "0%", fontFamily: 'Roboto, sans-serif' }}>Salvar</Input>{' '}
+                    </div>
+                    <div className="botao">
+                        <Button onClick={enviarcheckemail} type="submit" style={{ background: "#007bff", color: "#fff", fontSize: "13px" }}>Enviar</Button>{' '}
+                    </div>
+                </Form>
+            </Container >
+        </div >
     );
 }
 export default Checkpromo;

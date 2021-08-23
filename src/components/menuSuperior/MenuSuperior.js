@@ -30,6 +30,12 @@ const MenuSuperior = (props) => {
                 <NavItem id="li2">
                     <NavLink href="/vendaestoque" id="menus"><i className="material-icons md-36 souza-left ">plagiarism</i>CONSULTAS</NavLink>
                 </NavItem>
+                <NavItem id="li3">
+                    <NavLink href="/checkpromo" id="menus"><i className="material-icons md-36 souza-left ">plagiarism</i>PRODUTOS PROMOÇÃO</NavLink>
+                </NavItem>
+                <NavItem id="li4">
+                    <NavLink href="/movimentacao" id="menus"><i className="material-icons md-36 souza-left ">plagiarism</i>MOVIMENTAÇÃO</NavLink>
+                </NavItem>
               </Nav> 
               <NavItem id="BotaoSair">
                 <NavLink href="/" className="btn"><i className="material-icons md-36 souza-left ">exit_to_app</i>SAIR</NavLink>
