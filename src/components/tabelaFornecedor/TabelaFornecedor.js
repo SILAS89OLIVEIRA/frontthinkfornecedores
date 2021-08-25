@@ -88,7 +88,6 @@ const TabelaFornecedor = (props) => {
 
 
 
-
     useEffect(() => {
         api.get(`vendeestgeral/${hoje().bd}/${hoje().bd}/${for_cod}/`).then(response => {
             setVendeestgeral(response.data)
@@ -403,15 +402,15 @@ const TabelaFornecedor = (props) => {
 
             <Container>
                 <div id='pai'>
-                    <div id='div1' className="hide">
+                    <div id='div1' >
                         <div className="div">
                             <Label className="title-card"> Todos os codigos Geral </Label>
                             <div id='Grupo1'>
                                 <div>
                                     <DatePicker
                                         className='Campo'
-                                        placeholderText='De:'
-                                        id="data"
+                                        id='data'
+                                        placeholderText='De:'                                    
                                         onChange={onChange}
                                         selected={selectDateIni}
                                         locale={ptBR}
@@ -422,8 +421,8 @@ const TabelaFornecedor = (props) => {
 
                                     <DatePicker
                                         className='Campo'
-                                        placeholderText='Até:'
-                                        id="data1"
+                                        id='data1'
+                                        placeholderText='Até:'                                        
                                         onChange={onChange1}
                                         selected={selectDateFim}
                                         locale={ptBR}
@@ -433,9 +432,9 @@ const TabelaFornecedor = (props) => {
                                     />
                                 </div>
 
-                                <div>
-                                    <Button className="buttonFiltrar" onClick={fetchRequest} > Filtrar </Button>
-                                    <Button className="buttonImprimir" onClick={PDF1}>Baixar PDF</Button>
+                                <div className='botao'>
+                                    <Button className="buttonFiltrar"  onClick={fetchRequest} color='btn btn-primary'> Filtrar </Button>
+                                    <Button className="buttonImprimir" onClick={PDF1} color='btn btn-primary' >Baixar PDF</Button>
                                 </div>
 
                                 <ReactHTMLTableToExcel
@@ -445,6 +444,7 @@ const TabelaFornecedor = (props) => {
                                     filename="tablexls"
                                     sheet="tablexls"
                                     buttonText="Baixar Excel"
+                                
                                 />
                             </div>
 
@@ -453,7 +453,7 @@ const TabelaFornecedor = (props) => {
                             {/*TABELA*/}
 
                             <div>
-                                <StickyTable className="Tabela" >
+                                <StickyTable className="Tabela1" >
                                     <Row>
                                         <Cell style={{ background: '#007bff', color: 'white' }}>NOME FOR</Cell>
                                         <Cell style={{ background: '#007bff', color: 'white' }}>COD. FOR.</Cell>
@@ -552,8 +552,8 @@ const TabelaFornecedor = (props) => {
                                         ))}
                                     </Input>
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest2} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF2}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest2}> Filtrar </Button>
+                                        <Button className="buttonImprimir"  onClick={PDF2}>Baixar PDF</Button>
                                     </div>
                                     <ReactHTMLTableToExcel
                                         id="test-table-xls-button"
@@ -564,7 +564,7 @@ const TabelaFornecedor = (props) => {
                                         buttonText="Baixar Excel"
                                     />
                                 </div>
-                                <div className="Tabela">
+                                <div className="Tabela2">
                                     <StickyTable>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>NOME FOR</Cell>
@@ -633,6 +633,7 @@ const TabelaFornecedor = (props) => {
                                     <div id="Grupo3">
                                         <div>
                                             <DatePicker
+                                                className='Campo'
                                                 placeholderText='De:'
                                                 id="data"
                                                 onChange={onChange}
@@ -643,6 +644,7 @@ const TabelaFornecedor = (props) => {
                                             />
 
                                             <DatePicker
+                                                className='Campo'
                                                 placeholderText='Até:'
                                                 id="data1"
                                                 onChange={onChange1}
@@ -652,6 +654,7 @@ const TabelaFornecedor = (props) => {
                                                 withPortal
                                             />
                                         </div>
+
                                         <Label for="revista" className="revistaLabel">Código</Label>
                                         <Input type="select" id="revista" onChange={onChange2}>
                                             <option value='0'>SELECIONE OPÇÃO</option>
@@ -664,8 +667,8 @@ const TabelaFornecedor = (props) => {
 
 
                                         <div>
-                                            <Button className="buttonFiltrar" onClick={fetchRequest3} sm={12} > Filtrar </Button>
-                                            <Button className="buttonImprimir" sm={12} onClick={PDF3}>Baixar PDF</Button>
+                                            <Button className="buttonFiltrar" onClick={fetchRequest3}> Filtrar </Button>
+                                            <Button className="buttonImprimir"  onClick={PDF3}>Baixar PDF</Button>
                                         </div>
                                         <ReactHTMLTableToExcel
                                             id="test-table-xls-button"
@@ -679,7 +682,7 @@ const TabelaFornecedor = (props) => {
 
 
                                     <div >
-                                        <StickyTable >
+                                        <StickyTable className='Tabela3' >
                                             <Row>
                                                 <Cell style={{ background: '#007bff', color: 'white' }}>NOME PRODUTO</Cell>
                                                 <Cell style={{ background: '#007bff', color: 'white' }}>Nº PRODUTO</Cell>
@@ -823,7 +826,7 @@ const TabelaFornecedor = (props) => {
 
 
                                 <div>
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela4'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>TAMANHO</Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>COR</Cell>
@@ -955,7 +958,7 @@ const TabelaFornecedor = (props) => {
                                 </div>
 
                                 <div>
-                                    <StickyTable className="Tabela">
+                                    <StickyTable className="Tabela5">
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>TAMANHO</Cell>
@@ -1060,8 +1063,8 @@ const TabelaFornecedor = (props) => {
                                     </div>
 
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest6} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF6}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest6}> Filtrar </Button>
+                                        <Button className="buttonImprimir"  onClick={PDF6}>Baixar PDF</Button>
                                     </div>
                                     <ReactHTMLTableToExcel
                                         id="test-table-xls-button"
@@ -1075,7 +1078,7 @@ const TabelaFornecedor = (props) => {
                                 </div>
 
                                 <div>
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela6'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>NOME FOR</Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>LOJA</Cell>
@@ -1195,7 +1198,7 @@ const TabelaFornecedor = (props) => {
                                 </div>
 
                                 <div >
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela7'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>NOME FOR</Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>COD. FOR</Cell>
@@ -1302,8 +1305,8 @@ const TabelaFornecedor = (props) => {
                                     </Input>
 
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest8} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF8}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest8} > Filtrar </Button>
+                                        <Button className="buttonImprimir"  onClick={PDF8}>Baixar PDF</Button>
                                     </div>
 
                                     <ReactHTMLTableToExcel
@@ -1317,7 +1320,7 @@ const TabelaFornecedor = (props) => {
                                 </div>
 
                                 <div>
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela8'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>NOME PRODUTO</Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>Nº PRODUTO</Cell>
@@ -1455,8 +1458,8 @@ const TabelaFornecedor = (props) => {
                                     <Input className="enter" type='text' id="revista9" name='produtos_reffor' onChange={onChange4} placeholder="Referência" />
 
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest9} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF9}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest9}> Filtrar </Button>
+                                        <Button className="buttonImprimir"  onClick={PDF9}>Baixar PDF</Button>
                                     </div>
 
 

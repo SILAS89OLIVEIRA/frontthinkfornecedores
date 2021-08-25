@@ -3,8 +3,13 @@ import { Card, FormGroup, Label, Input } from 'reactstrap';
 import MenuSuperior from '../menuSuperior/MenuSuperior';
 import api from '../../api'
 import $ from "jquery";
+import { ptBR } from 'date-fns/locale'
+import DatePicker from "react-datepicker";
+import moment from 'moment';
+
 import { StickyTable, Cell, Row } from 'react-sticky-table';
 import { Container, Corpo, Devolu, Pedido, Troca } from './Container';
+
 
 
 import { TextField, Button } from "@material-ui/core";
@@ -90,12 +95,6 @@ const Movimentacao = (props) => {
     const [tabela10, setTabela10] = useState([]);
     const [tabela11, setTabela11] = useState([]);
     const [tabela12, setTabela12] = useState([]);
-
-    const [datainicial, setDatainicial] = useState([]);
-    const [datafinal, setDatafinal] = useState([]);
-
-
-
 
     useEffect(() => {
         api.get(`combocodigo/${for_cod}/`).then(response => {
@@ -302,102 +301,23 @@ const Movimentacao = (props) => {
 
 
     {/* datas */ }
-    function onChange2(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
+
+    const [selectDateIni, setSelectDateIni] = useState(null);
+    const onChange2 = selectDateIni => {
+        setSelectDateIni(selectDateIni);
     }
-    function onChange3(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
+
+    const [selectDateFim, setSelectDateFim] = useState(null);
+
+    const onChange3 = selectDateFim => {
+        setSelectDateFim(selectDateFim);
     }
-    function onChange4(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange5(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange6(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange7(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange8(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange9(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange10(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange11(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange12(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange13(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange14(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange15(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange16(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange17(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange18(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange19(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange20(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange21(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange22(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange23(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
-    function onChange24(ev) {
-        const { name, value } = ev.target;
-        setDatainicial(value); console.log(value);
-    }
-    function onChange25(ev) {
-        const { name, value } = ev.target;
-        setDatafinal(value); console.log(value);
-    }
+
+
+    const datainicial = moment(selectDateIni).format("YYYYMMDD")
+    const datafinal = moment(selectDateFim).format("YYYYMMDD")
+
+
 
 
 
@@ -584,21 +504,29 @@ const Movimentacao = (props) => {
                             <div id="entrada1" className="hide">
 
                                 <Card className="Card5" >
-
                                     <div>
-                                        <TextField
-                                            className="Campo"
-                                            label="De:"
-                                            type="date"
+                                        <DatePicker
+                                            className='Campo'
+                                            id="data"
+                                            placeholderText='De:'
                                             onChange={onChange2}
+                                            selected={selectDateIni}
+                                            locale={ptBR}
+                                            dateFormat="P"
+                                            withPortal
+                                            type='reset'
                                         />
-                                        <TextField
-                                            className="Campo"
-                                            label="Até:"
-                                            type="date"
+                                        <DatePicker
+                                            className='Campo'
+                                            id="data"
+                                            placeholderText='Até:'
                                             onChange={onChange3}
+                                            selected={selectDateIni}
+                                            locale={ptBR}
+                                            dateFormat="P"
+                                            withPortal
+                                            type='reset'
                                         />
-
                                     </div>
                                     <Input
                                         type="select"
@@ -606,7 +534,7 @@ const Movimentacao = (props) => {
                                         id="select"
                                         className="Campo1"
                                         label="Buscar"
-                                        style={{ width: '93%' }}
+                                        style={{width: '93%'}}
                                         onChange={onChange1}
                                     >
                                         <option selected disabled value="">Selecione Opção</option>
@@ -651,20 +579,27 @@ const Movimentacao = (props) => {
                             <div id="entrada2" className="hide">
                                 <Card className="Card6" >
                                     <div>
-                                        <TextField
-                                            className="Campo"
-                                            id="standard-data-input"
-                                            label="De:"
-                                            type="data"
-                                            onChange={onChange4}
+                                        <DatePicker
+                                            className='Campo'
+                                            id='data'
+                                            placeholderText='De:'
+                                            onChange={onChange2}
+                                            selected={selectDateIni}
+                                            locale={ptBR}
+                                            dateFormat="P"
+                                            withPortal
+                                            type='reset'
                                         />
-
-                                        <TextField
-                                            className="Campo"
-                                            id="standard-data-input"
-                                            label="Até:"
-                                            type="data"
-                                            onChange={onChange5}
+                                        <DatePicker
+                                            className='Campo'
+                                            id='data'
+                                            placeholderText='Até:'
+                                            onChange={onChange3}
+                                            selected={selectDateIni}
+                                            locale={ptBR}
+                                            dateFormat="P"
+                                            withPortal
+                                            type='reset'
                                         />
                                     </div>
 
@@ -719,21 +654,28 @@ const Movimentacao = (props) => {
 
                                 <Card className="Card7" >
                                     <div>
-                                        <TextField
-                                            className="Campo"
-                                            label="De:"
-                                            type="data"
-                                            onChange={onChange6}
+                                        <DatePicker
+                                            className='Campo'
+                                            id='data'
+                                            placeholderText='De:'
+                                            onChange={onChange2}
+                                            selected={selectDateIni}
+                                            locale={ptBR}
+                                            dateFormat="P"
+                                            withPortal
+                                            type='reset'
                                         />
-
-                                        <TextField
-                                            className="Campo"
-                                            id="standard-data-input"
-                                            label="Até:"
-                                            type="data"
-                                            onChange={onChange7}
+                                        <DatePicker
+                                            className='Campo'
+                                            id='data'
+                                            placeholderText='Até:'
+                                            onChange={onChange3}
+                                            selected={selectDateIni}
+                                            locale={ptBR}
+                                            dateFormat="P"
+                                            withPortal
+                                            type='reset'
                                         />
-
                                     </div>
                                     <TextField
                                         className="Campo1"
@@ -805,21 +747,28 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card8">
                                             <div>
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange8}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange9}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
                                             </div>
 
                                             <Input
@@ -873,20 +822,27 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card9">
                                             <div>
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-
-                                                    onChange={onChange10}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-
-                                                    onChange={onChange11}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
 
@@ -943,18 +899,27 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card10">
                                             <div>
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange12}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange13}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
                                             <TextField
@@ -1026,21 +991,29 @@ const Movimentacao = (props) => {
                                         <Card className="Card11">
 
                                             <div>
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange14}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange15}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
-
                                             <Input
                                                 type="select"
                                                 name="select"
@@ -1092,21 +1065,28 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card12">
                                             <div>
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange16}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange17}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
                                             </div>
 
 
@@ -1163,19 +1143,27 @@ const Movimentacao = (props) => {
                                         <Card className="Card13">
 
                                             <div>
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-
-                                                    onChange={onChange18}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'                                                                                                                                                                   
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange19}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'                                                    
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
 
@@ -1245,22 +1233,29 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card14">
                                             <div>
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange20}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange21}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
-
 
                                             <Input
                                                 type="select"
@@ -1315,18 +1310,27 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card15">
                                             <div>
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange22}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange23}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
 
@@ -1384,18 +1388,27 @@ const Movimentacao = (props) => {
 
                                         <Card className="Card16">
                                             <div>
-                                                <TextField
-                                                    className="Campo"
-                                                    label="De:"
-                                                    type="data"
-                                                    onChange={onChange24}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='De:'
+                                                    onChange={onChange2}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
-
-                                                <TextField
-                                                    className="Campo"
-                                                    label="Até:"
-                                                    type="data"
-                                                    onChange={onChange25}
+                                                <DatePicker
+                                                    className='Campo'
+                                                    id='data'
+                                                    placeholderText='Até:'
+                                                    onChange={onChange3}
+                                                    selected={selectDateIni}
+                                                    locale={ptBR}
+                                                    dateFormat="P"
+                                                    withPortal
+                                                    type='reset'
                                                 />
                                             </div>
                                             <TextField

@@ -225,15 +225,28 @@ export const Corpo = styled.div`
                 margin: 70px 0 0 0;
                 width: 30%;
                 height: 55%;
-            
-
+                
                 .Campo{
-                    width: 45%;
+                    display: grid;
+                    margin: 5px 0 0 15px;
                     justify-content: space-bettewn;
-                    margin-left: 10px;
-                    margin-top: 10px;
                 }
 
+                #data {
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid black;                
+                    outline: none;
+                    height: 2rem;
+                    width: 40%;
+                    font-size: 1rem;
+                    margin: 0 2% 0 3%;
+                    padding: 0;
+                    box-shadow: none;
+                    box-sizing: content-box;
+                    transition: all 0.3s;
+                }               
+              
                 .Campo1{
                     width: 93%;
                     margin: 15px 0 0 10px;
@@ -267,12 +280,26 @@ export const Corpo = styled.div`
             
 
                 .Campo{
-                    width: 45%;
+                    width: 40%;
                     justify-content: space-bettewn;
-                    margin-left: 10px;
-                    margin-top: 10px;
                 }
 
+                #data {
+                    display: grid;
+                    justify-content: space-bettewn;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid black;                
+                    outline: none;
+                    height: 2rem;
+                    width: 40%;
+                    font-size: 1rem;
+                    margin: 0 2% 0 3%;
+                    padding: 0;
+                    box-shadow: none;
+                    box-sizing: content-box;
+                    transition: all 0.3s;
+                }  
                 .Campo1{
                     width: 93%;
                     margin: 15px 0 0 10px;
@@ -305,15 +332,30 @@ export const Corpo = styled.div`
             
 
                 .Campo{
-                    width: 45%;
+                    width: 40%;
                     justify-content: space-bettewn;
-                    margin-left: 10px;
-                    margin-top: 10px;
                 }
 
+                #data {
+                    display: grid;
+                    justify-content: space-bettewn;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid black;                
+                    outline: none;
+                    height: 2rem;
+                    width: 40%;
+                    font-size: 1rem;
+                    margin: 0 2% 0 3%;
+                    padding: 0;
+                    box-shadow: none;
+                    box-sizing: content-box;
+                    transition: all 0.3s;
+                }  
+
                 .Campo1{
-                    width: 93%;
-                    margin: 15px 0 0 10px;
+                    width: 90%;
+                    margin: 5px 0 0 15px;
                 }
 
                 .Botao{
@@ -479,13 +521,26 @@ export const Corpo = styled.div`
                     width: 30%;
                     height: 55%;
                 
-
                     .Campo{
-                        width: 45%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
-                        margin-top: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
     
                     .Campo1{
                         width: 93%;
@@ -520,11 +575,26 @@ export const Corpo = styled.div`
                 
 
                     .Campo{
-                        width: 45%;
+                        width: 40%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
-                        margin-top: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
     
                     .Campo1{
                         width: 93%;
@@ -556,11 +626,26 @@ export const Corpo = styled.div`
                 
 
                     .Campo{
-                        width: 45%;
+                        width: 40%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
-                        margin-top: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
     
                     .Campo1{
                         width: 93%;
@@ -646,9 +731,26 @@ export const Corpo = styled.div`
                     margin-left: -5px;
 
                     .Campo{
+                        width: 40%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
 
                     .Campo1{
                         margin: 10px;
@@ -726,12 +828,26 @@ export const Pedido = styled.div`
         
 
             .Campo{
-                width: 45%;
+                width: 40%;
                 justify-content: space-bettewn;
-                margin-left: 10px;
-                margin-top: 10px;
             }
 
+            #data {
+                display: grid;
+                justify-content: space-bettewn;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 40%;
+                font-size: 1rem;
+                margin: 0 2% 0 3%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }  
             .Campo1{
                 width: 93%;
                 margin: 15px 0 0 10px;
@@ -763,13 +879,27 @@ export const Pedido = styled.div`
             width: 30%;
             height: 55%;
         
-
             .Campo{
-                width: 45%;
+                width: 40%;
                 justify-content: space-bettewn;
-                margin-left: 10px;
-                margin-top: 10px;
             }
+
+            #data {
+                display: grid;
+                justify-content: space-bettewn;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 40%;
+                font-size: 1rem;
+                margin: 0 2% 0 3%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }  
 
             .Campo1{
                 width: 93%;
@@ -801,11 +931,26 @@ export const Pedido = styled.div`
         
 
             .Campo{
-                width: 45%;
+                width: 40%;
                 justify-content: space-bettewn;
-                margin-left: 10px;
-                margin-top: 10px;
             }
+
+            #data {
+                display: grid;
+                justify-content: space-bettewn;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 40%;
+                font-size: 1rem;
+                margin: 0 2% 0 3%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }  
 
             .Campo1{
                 width: 93%;
@@ -968,11 +1113,26 @@ export const Pedido = styled.div`
                 
 
                     .Campo{
-                        width: 45%;
+                        width: 40%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
-                        margin-top: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
     
                     .Campo1{
                         width: 93%;
@@ -1006,11 +1166,26 @@ export const Pedido = styled.div`
                     height: 55%;
                 
                     .Campo{
-                        width: 45%;
+                        width: 40%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
-                        margin-top: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
     
                     .Campo1{
                         width: 93%;
@@ -1042,11 +1217,26 @@ export const Pedido = styled.div`
                 
 
                     .Campo{
-                        width: 45%;
+                        width: 40%;
                         justify-content: space-bettewn;
-                        margin-left: 10px;
-                        margin-top: 10px;
                     }
+    
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 40%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 3%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
     
                     .Campo1{
                         width: 93%;
