@@ -147,6 +147,7 @@ th {
 
 .revistaLabel {
     margin: 0 0 0 7%;
+    
 }
 
 #revista {
@@ -630,58 +631,14 @@ div .buttonImprimir:focus {
 
 /* ---------------------------------------------------
     BUTTON BAIXAR
------------------------------------------------------ */
+-------------------------semmm---------------------- */
 
-#test-table-xls-button {
-    padding: 4% 0%;
+ 
+div #test-table-xls-button{
+    height: 40px;
     width: 100%;
-    position: relative;
-    margin:0% 2% 0% 15%;
+  
 }
-
-div #test-table-xls-button {
-    padding-top: 1%;
-    background: #007bff;
-    color: white;
-    border-radius: 0%;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-    border: none;	
-}
-
-div #test-table-xls-button:hover {
-    background: white;
-    color: #007bff;
-}
-
-
-div #test-table-xls-button:focus {
-    background: white;
-    color: #007bff;
-}
-
-
-
-@media only screen and (max-width: 768px) {
-    div #test-table-xls-button {
-        padding: 2% 0;
-        background: #007bff;
-        border-radius: 0%;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
-        border: none;
-        color: white
-    }
-
-    #test-table-xls-button {
-        padding: 0% 0% 0% 0%;
-        margin:0% 0% 0% 5%;
-        width: 102%;
-        position: relative;
-    }
-    
-}
-
-
-
 
 
 .hide {

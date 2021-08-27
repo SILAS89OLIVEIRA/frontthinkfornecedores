@@ -238,9 +238,9 @@ export const Corpo = styled.div`
                     border-bottom: 1px solid black;                
                     outline: none;
                     height: 2rem;
-                    width: 40%;
+                    width: 80%;
                     font-size: 1rem;
-                    margin: 0 2% 0 3%;
+                    margin: 0 2% 0 10%;
                     padding: 0;
                     box-shadow: none;
                     box-sizing: content-box;
@@ -292,9 +292,9 @@ export const Corpo = styled.div`
                     border-bottom: 1px solid black;                
                     outline: none;
                     height: 2rem;
-                    width: 40%;
+                    width: 80%;
                     font-size: 1rem;
-                    margin: 0 2% 0 3%;
+                    margin: 0 2% 0 10%;
                     padding: 0;
                     box-shadow: none;
                     box-sizing: content-box;
@@ -344,9 +344,9 @@ export const Corpo = styled.div`
                     border-bottom: 1px solid black;                
                     outline: none;
                     height: 2rem;
-                    width: 40%;
+                    width: 80%;
                     font-size: 1rem;
-                    margin: 0 2% 0 3%;
+                    margin: 0 2% 0 10%;
                     padding: 0;
                     box-shadow: none;
                     box-sizing: content-box;
@@ -414,17 +414,41 @@ export const Corpo = styled.div`
                         heigth: 90%;
                         margin-left: -5px;
 
+                        
                         .Campo{
+                            
                             justify-content: space-bettewn;
                             margin-left: 10px;
                         }
+                        #data {
+                            display: grid;
+                            justify-content: space-bettewn;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid black;                
+                            outline: none;
+                            height: 2rem;
+                            width: 80%;
+                            font-size: 1rem;
+                            margin: 0 2% 0 10%;
+                            padding: 0;
+                            box-shadow: none;
+                            box-sizing: content-box;
+                            transition: all 0.3s;
+                        }  
 
                         .Campo1{
                             margin: 10px;
                         }
 
+                        > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
                         .Botao1{
+                            width: 90%;
                             margin: 15px 0 5px 15px;
+                            
                         }
 
                     }
@@ -441,13 +465,35 @@ export const Corpo = styled.div`
                             justify-content: space-bettewn;
                             margin-left: 10px;
                         }
+                        #data {
+                            display: grid;
+                            justify-content: space-bettewn;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid black;                
+                            outline: none;
+                            height: 2rem;
+                            width: 80%;
+                            font-size: 1rem;
+                            margin: 0 2% 0 10%;
+                            padding: 0;
+                            box-shadow: none;
+                            box-sizing: content-box;
+                            transition: all 0.3s;
+                        }  
 
                         .Campo1{
                             margin: 10px;
                         }
 
+                        > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
                         .Botao1{
+                            width: 90%;
                             margin: 15px 0 5px 15px;
+                            
                         }
                     }    
 
@@ -465,13 +511,35 @@ export const Corpo = styled.div`
                             justify-content: space-bettewn;
                             margin-left: 10px;
                         }
+                        #data {
+                            display: grid;
+                            justify-content: space-bettewn;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid black;                
+                            outline: none;
+                            height: 2rem;
+                            width: 80%;
+                            font-size: 1rem;
+                            margin: 0 2% 0 10%;
+                            padding: 0;
+                            box-shadow: none;
+                            box-sizing: content-box;
+                            transition: all 0.3s;
+                        }  
 
                         .Campo1{
                             margin: 10px;
                         }
 
+                        > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
                         .Botao1{
+                            width: 90%;
                             margin: 15px 0 5px 15px;
+                            
                         }
                     }
 
@@ -533,9 +601,9 @@ export const Corpo = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -587,9 +655,9 @@ export const Corpo = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -638,9 +706,9 @@ export const Corpo = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -695,6 +763,16 @@ export const Corpo = styled.div`
                         overflow: auto;
                     }
 
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
+                    .Botao1{
+                        width: 90%;
+                        margin: 15px 0 5px 15px;
+                        
+                    }
+
 
                 }
 
@@ -711,13 +789,34 @@ export const Corpo = styled.div`
                         justify-content: space-bettewn;
                         margin-left: 10px;
                     }
-
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
                     .Campo1{
                         margin: 10px;
                     }
 
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
                     .Botao1{
+                        width: 90%;
                         margin: 15px 0 5px 15px;
+                        
                     }
 
                 }
@@ -743,9 +842,9 @@ export const Corpo = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -756,8 +855,14 @@ export const Corpo = styled.div`
                         margin: 10px;
                     }
 
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
                     .Botao1{
+                        width: 90%;
                         margin: 15px 0 5px 15px;
+                        
                     }
                 }    
 
@@ -775,13 +880,35 @@ export const Corpo = styled.div`
                         justify-content: space-bettewn;
                         margin-left: 10px;
                     }
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
 
                     .Campo1{
                         margin: 10px;
                     }
 
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
                     .Botao1{
+                        width: 90%;
                         margin: 15px 0 5px 15px;
+                        
                     }
                 }
 
@@ -840,9 +967,9 @@ export const Pedido = styled.div`
                 border-bottom: 1px solid black;                
                 outline: none;
                 height: 2rem;
-                width: 40%;
+                width: 80%;
                 font-size: 1rem;
-                margin: 0 2% 0 3%;
+                margin: 0 2% 0 10%;
                 padding: 0;
                 box-shadow: none;
                 box-sizing: content-box;
@@ -892,9 +1019,9 @@ export const Pedido = styled.div`
                 border-bottom: 1px solid black;                
                 outline: none;
                 height: 2rem;
-                width: 40%;
+                width: 80%;
                 font-size: 1rem;
-                margin: 0 2% 0 3%;
+                margin: 0 2% 0 10%;
                 padding: 0;
                 box-shadow: none;
                 box-sizing: content-box;
@@ -943,9 +1070,9 @@ export const Pedido = styled.div`
                 border-bottom: 1px solid black;                
                 outline: none;
                 height: 2rem;
-                width: 40%;
+                width: 80%;
                 font-size: 1rem;
-                margin: 0 2% 0 3%;
+                margin: 0 2% 0 10%;
                 padding: 0;
                 box-shadow: none;
                 box-sizing: content-box;
@@ -1017,12 +1144,35 @@ export const Pedido = styled.div`
                 margin-left: 10px;
             }
 
+            #data {
+                display: grid;
+                justify-content: space-bettewn;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 80%;
+                font-size: 1rem;
+                margin: 0 2% 0 10%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }  
+
             .Campo1{
                 margin: 10px;
             }
 
+            > div .Botao{
+                display: flex;
+                width: 90%;
+            }
             .Botao1{
+                width: 90%;
                 margin: 15px 0 5px 15px;
+                
             }
 
         }
@@ -1040,12 +1190,35 @@ export const Pedido = styled.div`
                 margin-left: 10px;
             }
 
+            #data {
+                display: grid;
+                justify-content: space-bettewn;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 80%;
+                font-size: 1rem;
+                margin: 0 2% 0 10%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }  
+
             .Campo1{
                 margin: 10px;
             }
 
+            > div .Botao{
+                display: flex;
+                width: 90%;
+            }
             .Botao1{
+                width: 90%;
                 margin: 15px 0 5px 15px;
+                
             }
         }    
 
@@ -1064,12 +1237,35 @@ export const Pedido = styled.div`
                 margin-left: 10px;
             }
 
+            #data {
+                display: grid;
+                justify-content: space-bettewn;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 80%;
+                font-size: 1rem;
+                margin: 0 2% 0 10%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }  
+
             .Campo1{
                 margin: 10px;
             }
 
+            > div .Botao{
+                display: flex;
+                width: 90%;
+            }
             .Botao1{
+                width: 90%;
                 margin: 15px 0 5px 15px;
+                
             }
         }
 
@@ -1125,9 +1321,9 @@ export const Pedido = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -1178,9 +1374,9 @@ export const Pedido = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -1229,9 +1425,9 @@ export const Pedido = styled.div`
                         border-bottom: 1px solid black;                
                         outline: none;
                         height: 2rem;
-                        width: 40%;
+                        width: 80%;
                         font-size: 1rem;
-                        margin: 0 2% 0 3%;
+                        margin: 0 2% 0 10%;
                         padding: 0;
                         box-shadow: none;
                         box-sizing: content-box;
@@ -1303,12 +1499,35 @@ export const Pedido = styled.div`
                         margin-left: 10px;
                     }
 
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
+
                     .Campo1{
                         margin: 10px;
                     }
 
+                   > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
                     .Botao1{
-                        margin: 15px 0 5px 15px;
+                            width: 90%;
+                            margin: 15px 0 5px 15px;
+                            
                     }
 
                 }
@@ -1326,12 +1545,35 @@ export const Pedido = styled.div`
                         margin-left: 10px;
                     }
 
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
+
                     .Campo1{
                         margin: 10px;
                     }
 
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
                     .Botao1{
+                        width: 90%;
                         margin: 15px 0 5px 15px;
+                        
                     }
                 }    
 
@@ -1350,12 +1592,35 @@ export const Pedido = styled.div`
                         margin-left: 10px;
                     }
 
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
+
                     .Campo1{
                         margin: 10px;
                     }
 
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
                     .Botao1{
+                        width: 90%;
                         margin: 15px 0 5px 15px;
+                        
                     }
                 }
 

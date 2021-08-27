@@ -410,7 +410,7 @@ const TabelaFornecedor = (props) => {
                                     <DatePicker
                                         className='Campo'
                                         id='data'
-                                        placeholderText='De:'                                    
+                                        placeholderText='De:'
                                         onChange={onChange}
                                         selected={selectDateIni}
                                         locale={ptBR}
@@ -422,7 +422,7 @@ const TabelaFornecedor = (props) => {
                                     <DatePicker
                                         className='Campo'
                                         id='data1'
-                                        placeholderText='Até:'                                        
+                                        placeholderText='Até:'
                                         onChange={onChange1}
                                         selected={selectDateFim}
                                         locale={ptBR}
@@ -433,19 +433,20 @@ const TabelaFornecedor = (props) => {
                                 </div>
 
                                 <div className='botao'>
-                                    <Button className="buttonFiltrar"  onClick={fetchRequest} color='btn btn-primary'> Filtrar </Button>
-                                    <Button className="buttonImprimir" onClick={PDF1} color='btn btn-primary' >Baixar PDF</Button>
+                                    <Button className="buttonFiltrar" id='filtro' onClick={fetchRequest} color='btn btn-primary'> Filtrar </Button>
+                                    <Button className="buttonImprimir" id='pdf' onClick={PDF1} color='btn btn-primary' >Baixar PDF</Button>
                                 </div>
+                                <div>
+                                    <ReactHTMLTableToExcel
+                                        id="test-table-xls-button"
+                                        className="download-table-xls-button"
+                                        table="relatorio1"
+                                        filename="tablexls"
+                                        sheet="tablexls"
+                                        buttonText="Baixar Excel"
 
-                                <ReactHTMLTableToExcel
-                                    id="test-table-xls-button"
-                                    className="download-table-xls-button"
-                                    table="relatorio1"
-                                    filename="tablexls"
-                                    sheet="tablexls"
-                                    buttonText="Baixar Excel"
-                                
-                                />
+                                    />
+                                </div>
                             </div>
 
 
@@ -480,41 +481,41 @@ const TabelaFornecedor = (props) => {
 
                                 </StickyTable>
                             </div>
-                         </div>
+                        </div>
 
-                            <div className='tabela hide'>
-                                <Table id="relatorio1" >
-                                    <thead className="cabecalho" >
+                        <div className='tabela hide'>
+                            <Table id="relatorio1" >
+                                <thead className="cabecalho" >
+                                    <tr>
+                                        <th> # </th>
+                                        <th> NOME FOR. </th>
+                                        <th> COD. FOR. </th>
+                                        <th> VAL. VENDA</th>
+                                        <th> QTDE. VENDA</th>
+                                        <th> GIRO(V/E) </th>
+                                        <th> VAL.ESTOQUE </th>
+                                        <th> QTD.ESTOQUE </th>
+                                    </tr>
+                                </thead>
+                                {vendeestgeral.map((vendeestgeral, idx) => (
+                                    <tbody key={idx} vendeestgeral={vendeestgeral} className="cabecalho2" >
                                         <tr>
-                                            <th> # </th>
-                                            <th> NOME FOR. </th>
-                                            <th> COD. FOR. </th>
-                                            <th> VAL. VENDA</th>
-                                            <th> QTDE. VENDA</th>
-                                            <th> GIRO(V/E) </th>
-                                            <th> VAL.ESTOQUE </th>
-                                            <th> QTD.ESTOQUE </th>
+                                            <th scope="row" > {(parseInt(idx) + 1)}  </th>
+                                            <td> {vendeestgeral.nome_fornecedor}</td>
+                                            <td> {vendeestgeral.cod_fabricante}</td>
+                                            <td> {vendeestgeral.venda_total_venda}</td>
+                                            <td> {vendeestgeral.qtd_pecas_vendidas} </td>
+                                            <td> {vendeestgeral.giro}</td>
+                                            <td> {vendeestgeral.venda_total_estoque}</td>
+                                            <td> {vendeestgeral.qtd_estoque}</td>
                                         </tr>
-                                    </thead>
-                                    {vendeestgeral.map((vendeestgeral, idx) => (
-                                        <tbody key={idx} vendeestgeral={vendeestgeral} className="cabecalho2" >
-                                            <tr>
-                                                <th scope="row" > {(parseInt(idx) + 1)}  </th>
-                                                <td> {vendeestgeral.nome_fornecedor}</td>
-                                                <td> {vendeestgeral.cod_fabricante}</td>
-                                                <td> {vendeestgeral.venda_total_venda}</td>
-                                                <td> {vendeestgeral.qtd_pecas_vendidas} </td>
-                                                <td> {vendeestgeral.giro}</td>
-                                                <td> {vendeestgeral.venda_total_estoque}</td>
-                                                <td> {vendeestgeral.qtd_estoque}</td>
-                                            </tr>
-                                        </tbody>
-                                    ))}
-                                </Table>
-                            </div>
+                                    </tbody>
+                                ))}
+                            </Table>
+                        </div>
                     </div>
 
-                    <div id='div2' className="hide">
+                    <div id='div2' className='hide'>
                         <div className="blocotabela">
                             <div className="div">
                                 <Label className="title-card"> Por codigo Geral </Label>
@@ -543,26 +544,31 @@ const TabelaFornecedor = (props) => {
                                         />
                                     </div>
 
-
-                                    <Label for="revista" className="revistaLabel">Código</Label>
-                                    <Input type="select" id="revista" onChange={onChange2}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {combocodigo.map(combocodigo => (
-                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
-                                        ))}
-                                    </Input>
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest2}> Filtrar </Button>
-                                        <Button className="buttonImprimir"  onClick={PDF2}>Baixar PDF</Button>
+                                        <Label for="revista" className="revistaLabel">Código</Label>
                                     </div>
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio2"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
+                                    <div>
+                                        <Input type="select" id="revista" onChange={onChange2}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {combocodigo.map(combocodigo => (
+                                                <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest2} id='filtro'> Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF2} id='pdf'>Baixar PDF</Button>
+                                    </div>
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio2"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
                                 <div className="Tabela2">
                                     <StickyTable>
@@ -625,10 +631,10 @@ const TabelaFornecedor = (props) => {
                         </div>
 
 
-                        <div id='div3' className="hide">
+                        <div id='div3' className='hide'>
                             <div className="blocotabela">
-                                
-                                <div className="div">                                    
+
+                                <div className="div">
                                     <Label className="title-card"> Por item Geral </Label>
                                     <div id="Grupo3">
                                         <div>
@@ -667,17 +673,19 @@ const TabelaFornecedor = (props) => {
 
 
                                         <div>
-                                            <Button className="buttonFiltrar" onClick={fetchRequest3}> Filtrar </Button>
-                                            <Button className="buttonImprimir"  onClick={PDF3}>Baixar PDF</Button>
+                                            <Button className="buttonFiltrar" onClick={fetchRequest3} id='filtro'> Filtrar </Button>
+                                            <Button className="buttonImprimir" onClick={PDF3} id='pdf'>Baixar PDF</Button>
                                         </div>
-                                        <ReactHTMLTableToExcel
-                                            id="test-table-xls-button"
-                                            className="download-table-xls-button"
-                                            table="relatorio3"
-                                            filename="tablexls"
-                                            sheet="tablexls"
-                                            buttonText="Baixar Excel"
-                                        />
+                                        <div>
+                                            <ReactHTMLTableToExcel
+                                                id="test-table-xls-button"
+                                                className="download-table-xls-button"
+                                                table="relatorio3"
+                                                filename="tablexls"
+                                                sheet="tablexls"
+                                                buttonText="Baixar Excel"
+                                            />
+                                        </div>
                                     </div>
 
 
@@ -765,7 +773,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div4' className="hide">
+                    <div id='div4' className='hide' >
                         <div className="blocotabela">
                             <div className="div">
                                 <Label className="title-card"> Por item tamanhos </Label>
@@ -794,33 +802,38 @@ const TabelaFornecedor = (props) => {
                                         />
                                     </div>
 
-
-                                    <Label for="revista" className="revistaLabel2">Código</Label>
-                                    <Input type="select" id="revista2" onChange={onChange2}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {combocodigo.map(combocodigo => (
-                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
-                                        ))}
-                                    </Input>
-
-
-                                    <Label for="revista" className="referenciaLabel2">Referência</Label>
-                                    <Input type='text' name='codigopro' id="referencia2" onChange={onChange4} placeholder="Código Produto" />
-
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest4} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF4}>Baixar PDF</Button>
+                                        <Label for="revista" className="revistaLabel2">Código</Label>
+                                    </div>
+                                    <div>
+                                        <Input type="select" id="revista2" onChange={onChange2}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {combocodigo.map(combocodigo => (
+                                                <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Label for="revista" className="referenciaLabel2">Referência</Label>
+                                    </div>
+                                    <div>
+                                        <Input type='text' name='codigopro' id="referencia2" onChange={onChange4} placeholder="Código Produto" />
+                                    </div>
+                                    <div>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest4} id='filtro' > Filtrar </Button>
+                                        <Button className="buttonImprimir" id='pdf' onClick={PDF4}>Baixar PDF</Button>
                                     </div>
 
-
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio4"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio4"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
 
 
@@ -899,7 +912,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div5' className="hide">
+                    <div id='div5' className='hide'>
                         <div className="blocotabela">
                             <div className="div">
                                 <Label className="title-card"> Por item Loja </Label>
@@ -927,34 +940,38 @@ const TabelaFornecedor = (props) => {
                                             withPortal
                                         />
                                     </div>
-
-                                    <Label for="revista" className="revistaLabel3">Código</Label>
-                                    <Input type="select" id="revista3" onChange={onChange2}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {combocodigo.map(combocodigo => (
-                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
-                                        ))}
-                                    </Input>
-
-
-                                    <Label for="revista" className="referenciaLabel3">Referência</Label>
-                                    <Input type='text' name='codigopro' id="referencia3" onChange={onChange4} placeholder="Código Produto" />
-
-
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest5} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF5}>Baixar PDF</Button>
+                                        <Label for="revista" className="revistaLabel3">Código</Label>
+                                    </div>
+                                    <div>
+                                        <Input type="select" id="revista3" onChange={onChange2}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {combocodigo.map(combocodigo => (
+                                                <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Label for="revista" className="referenciaLabel3">Referência</Label>
+                                    </div>
+                                    <div>
+                                        <Input type='text' name='codigopro' id="referencia3" onChange={onChange4} placeholder="Código Produto" />
                                     </div>
 
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio5"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
-
+                                    <div>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest5} id='filtro' > Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF5} id='pdf'>Baixar PDF</Button>
+                                    </div>
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio5"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div>
@@ -1033,7 +1050,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div6' className="hide">
+                    <div id='div6' className='hide' >
                         <div className="blocotabela">
                             <div className='div'>
                                 <Label className="title-card"> Acumulado por loja geral</Label>
@@ -1063,18 +1080,19 @@ const TabelaFornecedor = (props) => {
                                     </div>
 
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest6}> Filtrar </Button>
-                                        <Button className="buttonImprimir"  onClick={PDF6}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest6} id='filtro'> Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF6} id='pdf'>Baixar PDF</Button>
                                     </div>
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio6"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
-
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio6"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div>
@@ -1143,7 +1161,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div7' className="hide">
+                    <div id='div7' className='hide' >
                         <div className="blocotabela">
                             <div className='div'>
                                 <Label className="title-card"> Acumulado por loja (filtro por loja)</Label>
@@ -1171,30 +1189,32 @@ const TabelaFornecedor = (props) => {
                                             withPortal
                                         />
                                     </div>
-
-                                    <Label for="revista" className="revistaLabel4">Loja</Label>
-                                    <Input type="select" id="revista4" onChange={onChange5}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {comboloja.map(comboloja => (
-                                            <option key={comboloja.lojas_nome} value={comboloja.lojas_nome} > {comboloja.lojas_nome}  </option>
-                                        ))}
-                                    </Input>
-
-
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest7} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF7}>Baixar PDF</Button>
+                                        <Label for="revista" className="revistaLabel4">Loja</Label>
+                                    </div>
+                                    <div>
+                                        <Input type="select" id="revista4" onChange={onChange5}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {comboloja.map(comboloja => (
+                                                <option key={comboloja.lojas_nome} value={comboloja.lojas_nome} > {comboloja.lojas_nome}  </option>
+                                            ))}
+                                        </Input>
                                     </div>
 
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio7"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
-
+                                    <div>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest7} id='filtro' > Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF7} id='pdf'>Baixar PDF</Button>
+                                    </div>
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio7"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div >
@@ -1256,7 +1276,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div8' className="hide">
+                    <div id='div8' className='hide'>
                         <div className="blocotabela">
                             <div className='div'>
                                 <Label className="title-card"> Codigo e Loja</Label>
@@ -1272,8 +1292,6 @@ const TabelaFornecedor = (props) => {
                                             dateFormat="P"
                                             withPortal
                                         />
-
-
                                         <DatePicker
                                             className='Campo'
                                             placeholderText='Até:'
@@ -1285,38 +1303,44 @@ const TabelaFornecedor = (props) => {
                                             withPortal
                                         />
                                     </div>
-
-                                    <Label for="revista" className="revistaLabel5">Código</Label>
-                                    <Input type="select" id="revista5" onChange={onChange2}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {combocodigo.map(combocodigo => (
-
-                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
-
-                                        ))}
-                                    </Input>
-
-                                    <Label for="revista" className="revistaLabel6">Loja</Label>
-                                    <Input type="select" id="revista6" onChange={onChange5}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {comboloja.map(comboloja => (
-                                            <option key={comboloja.lojas_nome} value={comboloja.lojas_nome} > {comboloja.lojas_nome}  </option>
-                                        ))}
-                                    </Input>
-
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest8} > Filtrar </Button>
-                                        <Button className="buttonImprimir"  onClick={PDF8}>Baixar PDF</Button>
+                                        <Label for="revista" className="revistaLabel5">Código</Label>
                                     </div>
+                                    <div>
+                                        <Input type="select" id="revista5" onChange={onChange2}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {combocodigo.map(combocodigo => (
 
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio8"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                    />
+                                                <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
 
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Label for="revista" className="revistaLabel6">Loja</Label>
+                                    </div>
+                                    <div>
+
+                                        <Input type="select" id="revista6" onChange={onChange5}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {comboloja.map(comboloja => (
+                                                <option key={comboloja.lojas_nome} value={comboloja.lojas_nome} > {comboloja.lojas_nome}  </option>
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest8} id='filtro' > Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF8} id='pdf'>Baixar PDF</Button>
+                                    </div>
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio8"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div>
@@ -1404,7 +1428,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div9' className="hide">
+                    <div id='div9' className='hide'>
                         <div className="blocotabela">
                             <div className='div'>
                                 <Label className="title-card"> Codigo, Loja e Referencia </Label>
@@ -1434,47 +1458,57 @@ const TabelaFornecedor = (props) => {
                                         />
 
                                     </div>
-                                    <Label for="revista" className="revistaLabel7">Código</Label>
-                                    <Input type="select" id="revista7" onChange={onChange2}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {combocodigo.map(combocodigo => (
-
-                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
-
-                                        ))}
-                                    </Input>
-
-                                    <Label for="revista" className="revistaLabel8">Loja</Label>
-                                    <Input type="select" id="revista8" onChange={onChange5}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {comboloja.map(comboloja => (
-
-                                            <option key={comboloja.lojas_nome} value={comboloja.lojas_nome} > {comboloja.lojas_nome}  </option>
-
-                                        ))}
-                                    </Input>
-
-                                    <Label for="revista" className="revistaLabel9">Referência</Label>
-                                    <Input className="enter" type='text' id="revista9" name='produtos_reffor' onChange={onChange4} placeholder="Referência" />
-
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest9}> Filtrar </Button>
-                                        <Button className="buttonImprimir"  onClick={PDF9}>Baixar PDF</Button>
+                                        <Label for="revista" className="revistaLabel7">Código</Label>
+                                    </div>
+                                    <div>
+                                        <Input type="select" id="revista7" onChange={onChange2}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {combocodigo.map(combocodigo => (
+
+                                                <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
+
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Label for="revista" className="revistaLabel8">Loja</Label>
+                                    </div>
+                                    <div>
+                                        <Input type="select" id="revista8" onChange={onChange5}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {comboloja.map(comboloja => (
+
+                                                <option key={comboloja.lojas_nome} value={comboloja.lojas_nome} > {comboloja.lojas_nome}  </option>
+
+                                            ))}
+                                        </Input>
+                                    </div>
+                                    <div>
+                                        <Label for="revista" className="revistaLabel9">Referência</Label>
+                                    </div>
+                                    <div>
+                                        <Input className="enter" type='text' id="revista9" name='produtos_reffor' onChange={onChange4} placeholder="Referência" />
                                     </div>
 
-
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio9"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
+                                    <div>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest9} id='filtro'> Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF9} id='pdf'>Baixar PDF</Button>
+                                    </div>
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio9"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div >
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela9'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>LOJA </Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>TAMANHO</Cell>
@@ -1552,7 +1586,7 @@ const TabelaFornecedor = (props) => {
                         </div>
                     </div>
 
-                    <div id='div10' className="hide">
+                    <div id='div10' className='hide' >
                         <div className="blocotabela">
                             <div className='div'>
                                 <Label className="title-card"> Todos produtos por codigo e loja </Label>
@@ -1582,36 +1616,39 @@ const TabelaFornecedor = (props) => {
                                         />
                                     </div>
 
+                                    <div>
+                                        <Label for="revista" className="revistaLabel10">Código</Label>
+                                    </div>
+                                    <div>
+                                        <Input type="select" id="revista10" onChange={onChange2}>
+                                            <option value='0'>SELECIONE OPÇÃO</option>
+                                            {combocodigo.map(combocodigo => (
 
-                                    <Label for="revista" className="revistaLabel10">Código</Label>
-                                    <Input type="select" id="revista10" onChange={onChange2}>
-                                        <option value='0'>SELECIONE OPÇÃO</option>
-                                        {combocodigo.map(combocodigo => (
+                                                <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
 
-                                            <option key={combocodigo.for_cod} value={combocodigo.for_cod} > {combocodigo.for_cod + ' - ' + combocodigo.for_nom}  </option>
-
-                                        ))}
-                                    </Input>
-
+                                            ))}
+                                        </Input>
+                                    </div>
 
 
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest10} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF10}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest10} id='filtro'> Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF10} id='pdf'>Baixar PDF</Button>
                                     </div>
-
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio10"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio10"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
 
                                 <div >
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela10'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>LOJA </Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>TAMANHO</Cell>
@@ -1683,7 +1720,7 @@ const TabelaFornecedor = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div id='div11' className="hide">
+                    <div id='div11' className='hide'>
                         <div className="blocotabela">
                             <div className='div'>
                                 <Label className="title-card"> Consulta Consolidada Vendas </Label>
@@ -1711,21 +1748,22 @@ const TabelaFornecedor = (props) => {
                                         />
                                     </div>
                                     <div>
-                                        <Button className="buttonFiltrar" onClick={fetchRequest11} sm={12} > Filtrar </Button>
-                                        <Button className="buttonImprimir" sm={12} onClick={PDF11}>Baixar PDF</Button>
+                                        <Button className="buttonFiltrar" onClick={fetchRequest11} id='filtro' > Filtrar </Button>
+                                        <Button className="buttonImprimir" onClick={PDF11} id='pdf'>Baixar PDF</Button>
                                     </div>
-
-                                    <ReactHTMLTableToExcel
-                                        id="test-table-xls-button"
-                                        className="download-table-xls-button"
-                                        table="relatorio11"
-                                        filename="tablexls"
-                                        sheet="tablexls"
-                                        buttonText="Baixar Excel"
-                                    />
+                                    <div>
+                                        <ReactHTMLTableToExcel
+                                            id="test-table-xls-button"
+                                            className="download-table-xls-button"
+                                            table="relatorio11"
+                                            filename="tablexls"
+                                            sheet="tablexls"
+                                            buttonText="Baixar Excel"
+                                        />
+                                    </div>
                                 </div>
                                 <div>
-                                    <StickyTable className='Tabela'>
+                                    <StickyTable className='Tabela11'>
                                         <Row>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>ANO </Cell>
                                             <Cell style={{ background: '#007bff', color: 'white' }}>MES</Cell>

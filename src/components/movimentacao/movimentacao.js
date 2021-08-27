@@ -7,7 +7,8 @@ import { ptBR } from 'date-fns/locale'
 import DatePicker from "react-datepicker";
 import moment from 'moment';
 
-import { StickyTable, Cell, Row } from 'react-sticky-table';
+
+import { StickyTable, Cell, Row } from 'react-sticky-table';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 import { Container, Corpo, Devolu, Pedido, Troca } from './Container';
 
 
