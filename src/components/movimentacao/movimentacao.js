@@ -522,7 +522,7 @@ const Movimentacao = (props) => {
                                             id="data"
                                             placeholderText='Até:'
                                             onChange={onChange3}
-                                            selected={selectDateIni}
+                                            selected={selectDateFim}
                                             locale={ptBR}
                                             dateFormat="P"
                                             withPortal
@@ -596,7 +596,7 @@ const Movimentacao = (props) => {
                                             id='data'
                                             placeholderText='Até:'
                                             onChange={onChange3}
-                                            selected={selectDateIni}
+                                            selected={selectDateFim}
                                             locale={ptBR}
                                             dateFormat="P"
                                             withPortal
@@ -671,7 +671,7 @@ const Movimentacao = (props) => {
                                             id='data'
                                             placeholderText='Até:'
                                             onChange={onChange3}
-                                            selected={selectDateIni}
+                                            selected={selectDateFim}
                                             locale={ptBR}
                                             dateFormat="P"
                                             withPortal
@@ -764,7 +764,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -839,7 +839,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -916,7 +916,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -1008,7 +1008,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -1082,7 +1082,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -1160,7 +1160,7 @@ const Movimentacao = (props) => {
                                                     id='data'                                                    
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -1250,7 +1250,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -1327,7 +1327,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal
@@ -1405,7 +1405,7 @@ const Movimentacao = (props) => {
                                                     id='data'
                                                     placeholderText='Até:'
                                                     onChange={onChange3}
-                                                    selected={selectDateIni}
+                                                    selected={selectDateFim}
                                                     locale={ptBR}
                                                     dateFormat="P"
                                                     withPortal

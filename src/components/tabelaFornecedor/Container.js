@@ -9,6 +9,8 @@ export const Container = styled.div`
         padding: 20px;
         overflow: none;
 
+
+        //todos os códigos geral
         #Grupo1 {
             grid-column: 1/1;
            
@@ -87,7 +89,8 @@ export const Container = styled.div`
                 margin: 0 -15% 0% 3%;
             }
         }
-    
+        
+        //por codigo geral
         #Grupo2 {
             grid-column: 1/1;
            
@@ -112,6 +115,7 @@ export const Container = styled.div`
             #revista{
                 margin-left: 15px;
                 font-size: 18px;
+                width: 75%;
             }
 
             .buttonFiltrar{
@@ -157,6 +161,7 @@ export const Container = styled.div`
             }
         }
 
+        //por item geral
         #Grupo3 {
             grid-column: 1/1;
            
@@ -228,7 +233,7 @@ export const Container = styled.div`
             }
         }
     
-    
+        //por item tamanhos
         #Grupo4 {
             grid-column: 1/1;
            
@@ -306,6 +311,7 @@ export const Container = styled.div`
             }
         }
 
+        //por item loja
         #Grupo5 {
             grid-column: 1/1;
            
@@ -382,7 +388,8 @@ export const Container = styled.div`
                 margin: 0 -15% 0% 5%;
             }
         }
-        
+
+        // aumulado por loja geral
         #Grupo6 {
             grid-column: 1/1;
            
@@ -443,6 +450,7 @@ export const Container = styled.div`
             }
         }
 
+        //acumulado por loja geral(filtro por loja)
         #Grupo7 {
             grid-column: 1/1;
            
@@ -515,6 +523,7 @@ export const Container = styled.div`
             }
         }
 
+        //código e loja
         #Grupo8 {
             grid-column: 1/1;
            
@@ -538,6 +547,7 @@ export const Container = styled.div`
             #revista5{
                 margin-left: 15px;
                 font-size: 18px;
+                width: 75%;
             }
 
             .revistaLabel6{
@@ -549,6 +559,7 @@ export const Container = styled.div`
             #revista6{
                 margin-left: 15px;
                 font-size: 18px;
+                width: 75%;
             }
 
             .buttonFiltrar{
@@ -595,6 +606,7 @@ export const Container = styled.div`
             }
         }
 
+        // codigo, loja e referencia
         #Grupo9 {
             grid-column: 1/1;
            
@@ -686,6 +698,7 @@ export const Container = styled.div`
             }
         }
 
+        //todos os produtos por codigo e loja
         #Grupo10 {
             grid-column: 1/1;
            
@@ -756,6 +769,7 @@ export const Container = styled.div`
             }
         }
 
+        // consulta consolidada de vendas
         #Grupo11 {
             grid-column: 1/1;
            

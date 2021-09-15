@@ -192,78 +192,75 @@ padding: 20px;
 
 export const Corpo = styled.div` 
 
+.div2{
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 5px;
+padding: 20px;
+overflow: none;
 
-        .div2{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 5px;
-            padding: 20px;
-            overflow: none;
+    > div .Sele2{
+        grid-column: 2/4;
+        width: 40%;
+        margin: 0 0 0 33%;          
+    }
 
-
-            > div .Sele2{
-                grid-column: 2/4;
-                width: 40%;
-                margin: 0 0 0 33%;
-            
-            }
-
-            > div{
-                grid-column: 1/5;             
-                overflow: none;
-            
-                > div .Tabela1{
-                    width: 110%;
-                    height: 400px;
-                    margin: -18% -15% 0% 33%;
-                    overflow: auto;
-                }
-
-            .Card5{
-                display: flex;
-                grid-column:1/2;
-                margin: 70px 0 0 0;
-                width: 30%;
-                height: 55%;
+    > div{
+        grid-column: 1/5;             
+        overflow: none;
                 
-                .Campo{
-                    display: grid;
-                    margin: 5px 0 0 15px;
-                    justify-content: space-bettewn;
-                }
+        > div .Tabela1{
+            width: 110%;
+            height: 400px;
+            margin: -18% -15% 0% 33%;
+            overflow: auto;
+        }
 
-                #data {
-                    background-color: transparent;
-                    border: none;
-                    border-bottom: 1px solid black;                
-                    outline: none;
-                    height: 2rem;
-                    width: 80%;
-                    font-size: 1rem;
-                    margin: 0 2% 0 10%;
-                    padding: 0;
-                    box-shadow: none;
-                    box-sizing: content-box;
-                    transition: all 0.3s;
-                }               
-              
-                .Campo1{
-                    width: 93%;
-                    margin: 15px 0 0 10px;
-                }
-
-                .Botao{
-                    margin: 20px 0 0 15px;
-                }
-
-                .Botao1{
-                    margin: 15px 0 5px 15px;
-                    width: 40%;
-                }
-            
+        .Card5{
+            display: flex;
+            grid-column:1/2;
+            margin: 70px 0 0 0;
+            width: 30%;
+            height: 55%;
+                    
+            .Campo{
+                display: grid;
+                margin: 5px 0 0 15px;
+                justify-content: space-bettewn;
             }
-            
-            
+
+            #data {
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid black;                
+                outline: none;
+                height: 2rem;
+                width: 80%;
+                font-size: 1rem;
+                margin: 0 2% 0 10%;
+                padding: 0;
+                box-shadow: none;
+                box-sizing: content-box;
+                transition: all 0.3s;
+            }               
+                
+            .Campo1{
+                width: 93%;
+                margin: 15px 0 0 10px;
+            }
+
+            .Botao{
+                margin: 20px 0 0 15px;
+            }
+
+            .Botao1{
+                margin: 15px 0 5px 15px;
+                width: 40%;
+            }
+                
+        } // fim card5
+                
+                
             > div .Tabela2{
                 width: 110%;
                 height: 400px;
@@ -277,7 +274,7 @@ export const Corpo = styled.div`
                 margin: 70px 0 0 0;
                 width: 30%;
                 height: 55%;
-            
+                
 
                 .Campo{
                     width: 40%;
@@ -313,8 +310,8 @@ export const Corpo = styled.div`
                     margin: 15px 0 5px 15px;
                     width: 40%;
                 }
-            
-            }
+                
+            } // fim card6
 
             > div .Tabela3{
                 width: 110%;
@@ -329,7 +326,7 @@ export const Corpo = styled.div`
                 margin: 70px 0 0 0;
                 width: 30%;
                 height: 55%;
-            
+                
 
                 .Campo{
                     width: 40%;
@@ -366,44 +363,44 @@ export const Corpo = styled.div`
                     margin: 15px 0 5px 15px;
                     width: 40%;
                 }
+                
+            } // fim card7                             
             
-            }                            
             
             
-            
-                @media (max-width: 767px){
-                    > div{
-                        overflow: none;
+            @media (max-width: 767px){
+                > div{
+                    overflow: none;
 
-                        > div .Sele2{
-                            grid-column: 1/4;
-                            width: 100%;                        
+                    > div .Sele2{
+                        grid-column: 1/4;
+                        width: 100%;                        
                     
-                        }
-
-                        > div .Tabela1{
-                            width: 110%;
-                            height: 400px;
-                            margin: 30% -15% 0% -5px;
-                            overflow: auto;
-                        }
-
-                        > div .Tabela2{
-                            width: 110%;
-                            height: 400px;
-                            margin: 30% -15% 0% -5px;
-                            overflow: auto;
-                        }
-
-                        > div .Tabela3{
-                            width: 110%;
-                            height: 400px;
-                            margin: 30% -15% 0% -5px;
-                            overflow: auto;
-                        }
-        
-        
                     }
+
+                    > div .Tabela1{
+                        width: 110%;
+                        height: 400px;
+                        margin: 30% -15% 0% -5px;
+                        overflow: auto;
+                    }
+
+                    > div .Tabela2{
+                        width: 110%;
+                        height: 400px;
+                        margin: 30% -15% 0% -5px;
+                        overflow: auto;
+                    }
+
+                    > div .Tabela3{
+                        width: 110%;
+                        height: 400px;
+                        margin: 30% -15% 0% -5px;
+                        overflow: auto;
+                    }
+        
+        
+                } // fim div
 
                     
                 
@@ -451,7 +448,7 @@ export const Corpo = styled.div`
                             
                         }
 
-                    }
+                    } // fim card5
             
             
                     .Card6{
@@ -495,7 +492,7 @@ export const Corpo = styled.div`
                             margin: 15px 0 5px 15px;
                             
                         }
-                    }    
+                    }     //fim card6
 
             
             
@@ -540,13 +537,189 @@ export const Corpo = styled.div`
                             width: 90%;
                             margin: 15px 0 5px 15px;
                             
+                        } 
+                    } //fim card7                   
+                } // fim media 767px
+
+
+                @media (max-width: 1200px){
+                    > div{
+                        overflow: none;
+    
+                        > div .Sele2{
+                            grid-column: 1/4;
+                            width: 100%;                        
+                    
+                        }
+    
+                        > div .Tabela1{
+                            width: 110%;
+                            height: 400px;
+                            margin: 80% -15% 0% -5px;
+                            overflow: auto;
+                        }
+    
+                        > div .Tabela2{
+                            width: 110%;
+                            height: 400px;
+                            margin: 80% -15% 0% -5px;
+                            overflow: auto;
+                        }
+    
+                        > div .Tabela3{
+                            width: 110%;
+                            height: 400px;
+                            margin: 80% -15% 0% -5px;
+                            overflow: auto;
+                        }
+        
+        
+                    }
+    
+                    
+                
+                    .Card5{
+                        display: flex;
+                        grid-column: 1/3;
+                        width: 45vh;
+                        heigth: 90%;
+                        margin-left: -5px;
+    
+                        
+                        .Campo{
+                            
+                            justify-content: space-bettewn;
+                            margin-left: 10px;
+                        }
+                        #data {
+                            display: grid;
+                            justify-content: space-bettewn;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid black;                
+                            outline: none;
+                            height: 2rem;
+                            width: 80%;
+                            font-size: 1rem;
+                            margin: 0 2% 0 10%;
+                            padding: 0;
+                            box-shadow: none;
+                            box-sizing: content-box;
+                            transition: all 0.3s;
+                        }  
+    
+                        .Campo1{
+                            margin: 10px;
+                        }
+    
+                        > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
+                        .Botao1{
+                            width: 90%;
+                            margin: 15px 0 5px 15px;
+                            
+                        }
+    
+                    }
+            
+            
+                    .Card6{
+                        display: flex;
+                        grid-column: 1/3;
+                        width: 45vh;
+                        heigth: 90%;
+                        margin-left: -5px;
+    
+                        .Campo{
+                            justify-content: space-bettewn;
+                            margin-left: 10px;
+                        }
+                        #data {
+                            display: grid;
+                            justify-content: space-bettewn;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid black;                
+                            outline: none;
+                            height: 2rem;
+                            width: 80%;
+                            font-size: 1rem;
+                            margin: 0 2% 0 10%;
+                            padding: 0;
+                            box-shadow: none;
+                            box-sizing: content-box;
+                            transition: all 0.3s;
+                        }  
+    
+                        .Campo1{
+                            margin: 10px;
+                        }
+    
+                        > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
+                        .Botao1{
+                            width: 90%;
+                            margin: 15px 0 5px 15px;
+                            
+                        }
+                    }    
+    
+            
+            
+    
+                    .Card7{
+                        display: flex;
+                        grid-column: 1/3;
+                        width: 45vh;
+                        heigth: 90%;
+                        margin-left: -5px;
+    
+                        .Campo{
+                            justify-content: space-bettewn;
+                            margin-left: 10px;
+                        }
+                        #data {
+                            display: grid;
+                            justify-content: space-bettewn;
+                            background-color: transparent;
+                            border: none;
+                            border-bottom: 1px solid black;                
+                            outline: none;
+                            height: 2rem;
+                            width: 80%;
+                            font-size: 1rem;
+                            margin: 0 2% 0 10%;
+                            padding: 0;
+                            box-shadow: none;
+                            box-sizing: content-box;
+                            transition: all 0.3s;
+                        }  
+    
+                        .Campo1{
+                            margin: 10px;
+                        }
+    
+                        > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
+                        .Botao1{
+                            width: 90%;
+                            margin: 15px 0 5px 15px;
+                            
                         }
                     }
 
-                    
                 }
+                
             }
+
         }    
+        
     }       
         
 `;
@@ -1452,6 +1625,181 @@ export const Pedido = styled.div`
 
         
             @media (max-width: 767px){
+                > div{
+                    overflow: none;
+
+                    > div .Sele2{
+                        grid-column: 1/4;
+                        width: 100%;                        
+                
+                    }
+
+                    > div .Tabela1{
+                        width: 110%;
+                        height: 400px;
+                        margin: 30% -15% 0% -5px;
+                        overflow: auto;
+                    }
+
+                    > div .Tabela2{
+                        width: 110%;
+                        height: 400px;
+                        margin: 30% -15% 0% -5px;
+                        overflow: auto;
+                    }
+
+                    > div .Tabela3{
+                        width: 110%;
+                        height: 400px;
+                        margin: 30% -15% 0% -5px;
+                        overflow: auto;
+                    }
+
+
+                }
+
+                
+            
+                .Card14{
+                    display: flex;
+                    grid-column: 1/3;
+                    width: 45vh;
+                    heigth: 90%;
+                    margin-left: -5px;
+
+                    .Campo{
+                        justify-content: space-bettewn;
+                        margin-left: 10px;
+                    }
+
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
+
+                    .Campo1{
+                        margin: 10px;
+                    }
+
+                   > div .Botao{
+                            display: flex;
+                            width: 90%;
+                        }
+                    .Botao1{
+                            width: 90%;
+                            margin: 15px 0 5px 15px;
+                            
+                    }
+
+                }
+        
+        
+                .Card15{
+                    display: flex;
+                    grid-column: 1/3;
+                    width: 45vh;
+                    heigth: 90%;
+                    margin-left: -5px;
+
+                    .Campo{
+                        justify-content: space-bettewn;
+                        margin-left: 10px;
+                    }
+
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
+
+                    .Campo1{
+                        margin: 10px;
+                    }
+
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
+                    .Botao1{
+                        width: 90%;
+                        margin: 15px 0 5px 15px;
+                        
+                    }
+                }    
+
+        
+        
+
+                .Card16{
+                    display: flex;
+                    grid-column: 1/3;
+                    width: 45vh;
+                    heigth: 90%;
+                    margin-left: -5px;
+
+                    .Campo{
+                        justify-content: space-bettewn;
+                        margin-left: 10px;
+                    }
+
+                    #data {
+                        display: grid;
+                        justify-content: space-bettewn;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid black;                
+                        outline: none;
+                        height: 2rem;
+                        width: 80%;
+                        font-size: 1rem;
+                        margin: 0 2% 0 10%;
+                        padding: 0;
+                        box-shadow: none;
+                        box-sizing: content-box;
+                        transition: all 0.3s;
+                    }  
+
+                    .Campo1{
+                        margin: 10px;
+                    }
+
+                    > div .Botao{
+                        display: flex;
+                        width: 90%;
+                    }
+                    .Botao1{
+                        width: 90%;
+                        margin: 15px 0 5px 15px;
+                        
+                    }
+                }
+
+                
+            }
+            @media (max-width: 1200px){
                 > div{
                     overflow: none;
 
